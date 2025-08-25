@@ -8,14 +8,17 @@
 [![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=Support)](https://ko-fi.com/cssnr)
 
-- [Install](#Install)
-- [Usage](#Usage)
-
 # VitePress Swiper Plugin
 
-A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/).
+- [Install](#Install)
+- [Usage](#Usage)
+- [Options](#Options)
 
-Easily add Swiper to VitePress.
+A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image/Photo Gallery.
+
+Minimal footprint with only 3 lines of code to install and 1 line of code in markdown files.
+
+Easy to [install](#Install) and [use](#Usage) with lots of [options](#Options).
 
 ## Install
 
@@ -90,6 +93,10 @@ The above example will generate 2 image links:
 - https://example.com/path/1.jpg
 - https://example.com/path/2.jpg
 
+## Options
+
+Note: String parameters do not begin with a `:` but other types do.
+
 | Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
 | ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
 | base-url                | String  | ❗ Required               | Base URL for the Swiper images.                |
@@ -112,6 +119,9 @@ The above example will generate 2 image links:
 | :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`         |
 
 All the Swiper Parameters are documented here: https://swiperjs.com/swiper-api#parameters
+
+> [!TIP]
+> Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 # Contributing
 
