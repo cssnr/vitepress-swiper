@@ -122,50 +122,51 @@ Therefore, the above example will generate 2 image links:
 />
 ```
 
-Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
-Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
+> [!TIP]
+> If you need to pass a list of files, add thumbnails, or anything else,
+> [request a feature](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Options
 
 The options are broken down into 2 sections.
 The [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
 
-Note: String parameters do not begin with a `:` but all other types do.
+_Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
 These options are used by the plugin to generate the slideshow.
 
-| Property&nbsp;Name |  Type  |  Default&nbsp;Value  | Description&nbsp;of&nbsp;Property&nbsp;Value |
-| :----------------- | :----: | :------------------: | :------------------------------------------- |
-| base-url           | String |     ❗ Required      | Base URL for the Swiper images source.       |
-| :number-of-slides  | Number |     ❗ Required      | Number of slides to generate.                |
-| alt-text-prefix    | String |      `Loading`       | Prefix text for `alt` attributes.            |
-| file-ext           | String |        `jpg`         | File extension for image source url.         |
-| :pad-start         | Number |         `1`          | Pad image name numbers with `0`'s.           |
-| height             | String |       `496px`        | CSS string height applied to the Swiper.     |
-| button-text        | String | `View in Fullscreen` | Text label for fullscreen button.            |
+| Property&nbsp;Name |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Property&nbsp;Value |
+| :----------------- | :------------------: | :----: | :------------------------------------------- |
+| base-url           |     ❗ Required      | String | Base URL for the Swiper images source.       |
+| :number-of-slides  |     ❗ Required      | Number | Number of slides to generate.                |
+| alt-text-prefix    |      `Loading`       | String | Prefix text for `alt` attributes.            |
+| file-ext           |        `jpg`         | String | File extension for image source url.         |
+| :pad-start         |         `1`          | Number | Pad image name numbers with `0`'s.           |
+| height             |       `496px`        | String | CSS string height applied to the Swiper.     |
+| button-text        | `View in Fullscreen` | String | Text label for fullscreen button.            |
 
 ### Swiper Options
 
 Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type   | Default | Description&nbsp;of&nbsp;Property&nbsp;Value                                                       |
+| Property&nbsp;Name      | Default |  Type   | Description&nbsp;of&nbsp;Property&nbsp;Value                                                       |
 | :---------------------- | :-----: | :-----: | :------------------------------------------------------------------------------------------------- |
-| :slides-per-view        | Number  |   `1`   | Number of slides shown per view.                                                                   |
-| :breakpoints            | Object  |  `{ }`  | Breakpoints params [🌐](https://swiperjs.com/swiper-api#param-breakpoints)                         |
-| :pagination             | Object  |  `{ }`  | Pagination params (`false` to disable) [🌐](https://swiperjs.com/swiper-api#pagination-parameters) |
-| :lazy-preload-prev-next | Number  |   `2`   | Number of lazy loaded slides before/after.                                                         |
-| :keyboard               | Boolean | `true`  | Enable/disable keyboard navigation.                                                                |
-| :mousewheel             | Boolean | `true`  | Enable/disable mouse wheel navigation.                                                             |
-| :navigation             | Boolean | `true`  | Enable/disable navigation arrows.                                                                  |
-| :grab-cursor            | Boolean | `true`  | Enable/disable grab cursor on hover.                                                               |
-| :loop                   | Boolean | `true`  | Enable/disable continuous loop mode.                                                               |
-| effect                  | String  | `slide` | `slide`, `coverflow`, `cube`, `fade`, `flip`                                                       |
-| :coverflow-effect       | Object  |  `{ }`  | EffectCoverflow params [🌐](https://swiperjs.com/swiper-api#coverflow-effect-parameters)           |
-| :cube-effect            | Object  |  `{ }`  | EffectCube params [🌐](https://swiperjs.com/swiper-api#cube-effect-parameters)                     |
-| :fade-effect            | Object  |  `{ }`  | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)                     |
-| :flip-effect            | Object  |  `{ }`  | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)                     |
+| :slides-per-view        |   `1`   | Number  | Number of slides shown per view.                                                                   |
+| :breakpoints            |  `{ }`  | Object  | Breakpoints params [🌐](https://swiperjs.com/swiper-api#param-breakpoints)                         |
+| :pagination             |  `{ }`  | Object  | Pagination params (`false` to disable) [🌐](https://swiperjs.com/swiper-api#pagination-parameters) |
+| :lazy-preload-prev-next |   `2`   | Number  | Number of lazy loaded slides before/after.                                                         |
+| :keyboard               | `true`  | Boolean | Enable/disable keyboard navigation.                                                                |
+| :mousewheel             | `true`  | Boolean | Enable/disable mouse wheel navigation.                                                             |
+| :navigation             | `true`  | Boolean | Enable/disable navigation arrows.                                                                  |
+| :grab-cursor            | `true`  | Boolean | Enable/disable grab cursor on hover.                                                               |
+| :loop                   | `true`  | Boolean | Enable/disable continuous loop mode.                                                               |
+| effect                  | `slide` | String  | `slide`, `coverflow`, `cube`, `fade`, `flip`                                                       |
+| :coverflow-effect       |  `{ }`  | Object  | EffectCoverflow params [🌐](https://swiperjs.com/swiper-api#coverflow-effect-parameters)           |
+| :cube-effect            |  `{ }`  | Object  | EffectCube params [🌐](https://swiperjs.com/swiper-api#cube-effect-parameters)                     |
+| :fade-effect            |  `{ }`  | Object  | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)                     |
+| :flip-effect            |  `{ }`  | Object  | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)                     |
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
