@@ -1,6 +1,6 @@
 {
-  "name": "vitepress-swiper",
-  "version": "1.0.0",
+  "name": "@cssnr/vitepress-swiper",
+  "version": "0.0.1",
   "description": "Swiper Plugin for VitePress with Custom Options.",
   "homepage": "https://github.com/cssnr/vitepress-swiper?tab=readme-ov-file#readme",
   "bugs": "https://github.com/cssnr/vitepress-swiper/issues",

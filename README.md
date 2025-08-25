@@ -1,6 +1,4 @@
-[![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/vitepress-swiper?sort=semver&filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/vitepress-swiper/tags)
-[![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/vitepress-swiper?sort=semver&filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/vitepress-swiper/tags)
-[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/vitepress-swiper/releases/latest)
+[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=github&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper)
@@ -79,35 +77,41 @@ export default {
 
 ## Usage
 
-To use this add a `<VPSwiper>` to your markdown.
+To use this add a `<VPSwiper>` to your markdown. These are the only required properties:
 
 ```html
-<VPSwiper
-  base-url="https://raw.githubusercontent.com/smashedr/repo-images/refs/heads/master/zipline/android/screenshots"
-  :number-of-slides="18"
-/>
+<VPSwiper base-url="https://example.com/path" :number-of-slides="2" />
 ```
 
-| Property&nbsp;Name     | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
-| ---------------------- | ------- | ------------------------- | ---------------------------------------------- |
-| base-url \*            | String  | -                         | Base URL for the Swiper images.                |
-| number-of-slides \*    | Number  | -                         | Number of slides to generate.                  |
-| alt-text-prefix        | String  | `Loading`                 | Prefix text for slide `alt` attributes.        |
-| file-ext               | String  | `jpg`                     | File extension used for slide images.          |
-| pad-start              | Number  | `1`                       | Pad image numbers with `0`'s.                  |
-| height                 | String  | `496px`                   | CSS string height applied to the Swiper.       |
-| slides-per-view        | Number  | `1`                       | Number of slides shown per view.               |
-| breakpoints            | Object  | `{}`                      | Breakpoints configuration.                     |
-| pagination             | Object  | `{}`                      | Pagination configuration.                      |
-| lazy-preload-prev-next | Number  | `2`                       | Number of lazy-loaded slides before/after.     |
-| button-text            | String  | `View in Fullscreen`      | Text label for fullscreen button.              |
-| keyboard               | Boolean | `true`                    | Enable/disable keyboard navigation.            |
-| mousewheel             | Boolean | `true`                    | Enable/disable mouse wheel navigation.         |
-| navigation             | Boolean | `true`                    | Enable/disable navigation arrows.              |
-| grab-cursor            | Boolean | `true`                    | Enable/disable grab cursor on hover.           |
-| loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.           |
-| effect                 | String  | ` `                       | [`slide`, `fade`, `cube`, `coverflow`, `flip`] |
-| coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`         |
+The format is: `base-url`/`#`.`file-ext`
+
+The above example will generate 2 image links:
+
+- https://example.com/path/1.jpg
+- https://example.com/path/2.jpg
+
+| Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
+| ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
+| base-url                | String  | ❗ Required               | Base URL for the Swiper images.                |
+| :number-of-slides       | Number  | ❗ Required               | Number of slides to generate.                  |
+| alt-text-prefix         | String  | `Loading`                 | Prefix text for slide `alt` attributes.        |
+| file-ext                | String  | `jpg`                     | File extension used for slide images.          |
+| :pad-start              | Number  | `1`                       | Pad image numbers with `0`'s.                  |
+| height                  | String  | `496px`                   | CSS string height applied to the Swiper.       |
+| :slides-per-view        | Number  | `1`                       | Number of slides shown per view.               |
+| :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                     |
+| :pagination             | Object  | `{}`                      | Pagination configuration.                      |
+| :lazy-preload-prev-next | Number  | `2`                       | Number of lazy-loaded slides before/after.     |
+| button-text             | String  | `View in Fullscreen`      | Text label for fullscreen button.              |
+| :keyboard               | Boolean | `true`                    | Enable/disable keyboard navigation.            |
+| :mousewheel             | Boolean | `true`                    | Enable/disable mouse wheel navigation.         |
+| :navigation             | Boolean | `true`                    | Enable/disable navigation arrows.              |
+| :grab-cursor            | Boolean | `true`                    | Enable/disable grab cursor on hover.           |
+| :loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.           |
+| effect                  | String  | ` `                       | [`slide`, `fade`, `cube`, `coverflow`, `flip`] |
+| :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`         |
+
+All the Swiper Parameters are documented here: https://swiperjs.com/swiper-api#parameters
 
 # Contributing
 
