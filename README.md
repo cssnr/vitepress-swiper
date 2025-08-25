@@ -16,20 +16,20 @@
 
 A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image/Photo Gallery.
 
-Minimal footprint with only 3 lines of code to install and 1 line of code in markdown files.
+Minimal footprint with only 3 lines of setup code and 1 single Markdown tag.
 
-Easy to [install](#Install) and [use](#Usage) with lots of [options](#Options).
+Easy to [install](#Install) and [use](#Usage) with lots of [options](#Options)...
 
 ## Install
 
 There are 2 ways to install this plugin based on preference.
 
-1. [Dependency](#as-dependency) - Minimal footprint, no source access
-2. [Source](#as-source) - Adds 1 file to your project, full source access
+1. [Ad a Dependency](#as-dependency) - Easiest, minimal footprint, no source access
+2. [From the Source](#from-source) - Adds 1 file to your project, full source access
 
 ### As Dependency
 
-To use this as a dependency in your project install it with npm.
+Install using npm:
 
 ```shell
 npm i git+https://github.com/cssnr/vitepress-swiper.git#master
@@ -51,7 +51,9 @@ export default {
 }
 ```
 
-### As Source
+Next, proceed the [Usage](#Usage).
+
+### From Source
 
 To add this to your project:
 
