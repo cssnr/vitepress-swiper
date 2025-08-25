@@ -1,3 +1,5 @@
+[![NPM Downloads](https://img.shields.io/npm/dw/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
+[![NPM Version](https://img.shields.io/npm/v/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=github&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
@@ -33,10 +35,10 @@ There are 2 ways to install this plugin based on preference.
 
 ### As Dependency
 
-Install using npm:
+NPM Package: https://www.npmjs.com/package/@cssnr/vitepress-swiper
 
 ```shell
-npm i git+https://github.com/cssnr/vitepress-swiper.git#master
+npm i @cssnr/vitepress-swiper
 ```
 
 Then import it in your `.vitepress/theme/index.js`:
