@@ -16,7 +16,7 @@
 - [Usage](#Usage)
 - [Options](#Options)
 
-A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image or Photo Gallery with Custom Options.
+A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with Custom Options.
 
 Minimal footprint, only 3 lines of setup code and 1 Markdown tag per gallery.
 
@@ -100,24 +100,38 @@ The resulting URL format is: `base-url`/`#`.`file-ext`
 
 Therefore, the above example will generate 2 image links:
 
-- https://example.com/path/1.jpg
-- https://example.com/path/2.jpg
+- `https://example.com/path/1.jpg`
+- `https://example.com/path/2.jpg`
 
 Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
 Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
 
 ## Options
 
+The options are broken down into 2 sections.
+The [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
+
 Note: String parameters do not begin with a `:` but all other types do.
+
+### Plugin Options
+
+These options are used by the plugin to generate the slideshow.
+
+| Property&nbsp;Name | Type.  | Default&nbsp;Value | Description&nbsp;of&nbsp;Property        |
+| ------------------ | ------ | ------------------ | ---------------------------------------- |
+| base-url           | String | ❗ Required        | Base URL for the Swiper images.          |
+| :number-of-slides  | Number | ❗ Required        | Number of slides to generate.            |
+| alt-text-prefix    | String | `Loading`          | Prefix text for slide `alt` attributes.  |
+| file-ext           | String | `jpg`              | File extension used for slide images.    |
+| :pad-start         | Number | `1`                | Pad image numbers with `0`'s.            |
+| height             | String | `496px`            | CSS string height applied to the Swiper. |
+
+### Swiper Options
+
+Swiper Parameter Documentation: https://swiperjs.com/swiper-api#parameters
 
 | Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
 | ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
-| base-url                | String  | ❗ Required               | Base URL for the Swiper images.                |
-| :number-of-slides       | Number  | ❗ Required               | Number of slides to generate.                  |
-| alt-text-prefix         | String  | `Loading`                 | Prefix text for slide `alt` attributes.        |
-| file-ext                | String  | `jpg`                     | File extension used for slide images.          |
-| :pad-start              | Number  | `1`                       | Pad image numbers with `0`'s.                  |
-| height                  | String  | `496px`                   | CSS string height applied to the Swiper.       |
 | :slides-per-view        | Number  | `1`                       | Number of slides shown per view.               |
 | :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                     |
 | :pagination             | Object  | `{}`                      | Pagination configuration.                      |
@@ -130,8 +144,6 @@ Note: String parameters do not begin with a `:` but all other types do.
 | :loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.           |
 | effect                  | String  | ` `                       | [`slide`, `fade`, `cube`, `coverflow`, `flip`] |
 | :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`         |
-
-Note: All the Swiper Parameters are documented here: https://swiperjs.com/swiper-api#parameters
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
