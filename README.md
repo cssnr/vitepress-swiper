@@ -92,21 +92,20 @@ export default {
 
 To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to appear.
 
-These are the only 2 required properties ([options](#Options)):
-
 ```html
 <VPSwiper base-url="https://example.com/path" :number-of-slides="2" />
 ```
 
-The resulting URL format is: `base-url`/`#`.`file-ext`
+This generates numbers for filenames and appends them to the base url as follows:
+
+```text
+base-url / # . file-ext
+```
 
 Therefore, the above example will generate 2 image links:
 
 - `https://example.com/path/1.jpg`
 - `https://example.com/path/2.jpg`
-
-Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
-Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
 
 **Example passing additional parameters:**
 
@@ -122,6 +121,9 @@ Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-sw
   :coverflow-effect="{ slideShadows: false }"
 />
 ```
+
+Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
+Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
 
 ## Options
 
