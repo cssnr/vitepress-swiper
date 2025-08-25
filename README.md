@@ -17,6 +17,7 @@
 - [Install](#Install)
 - [Usage](#Usage)
 - [Options](#Options)
+- [Support](#Support)
 
 A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with Custom Options.
 
@@ -170,6 +171,22 @@ Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
+
+## Support
+
+**Please let us know if you run into any [issues](https://github.com/cssnr/vitepress-swiper/issues)
+or want to see [new features](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests)...**
+
+For general help or to request a feature:
+
+- Q&A Discussion: https://github.com/cssnr/vitepress-swiper/discussions/categories/q-a
+- Request a Feature: https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests
+
+If you are experiencing an issue/bug or getting unexpected results:
+
+- Report an Issue: https://github.com/cssnr/vitepress-swiper/issues
+- Chat with us on Discord: https://discord.gg/wXy6m2X8wY
+- Provide General Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=VitePress%20Swiper)
 
 # Contributing
 
