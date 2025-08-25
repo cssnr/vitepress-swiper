@@ -2,11 +2,26 @@
 // noinspection NpmUsedModulesInstalled
 import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Keyboard, Mousewheel, Navigation, Pagination, EffectCoverflow } from 'swiper/modules'
+import {
+  Keyboard,
+  Mousewheel,
+  Navigation,
+  Pagination,
+  EffectCoverflow,
+  EffectCube,
+  EffectFade,
+  EffectFlip,
+} from 'swiper/modules'
+
 import 'swiper/css'
+import 'swiper/css/keyboard'
+import 'swiper/css/mousewheel'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-coverflow'
+import 'swiper/css/effect-cube'
+import 'swiper/css/effect-fade'
+import 'swiper/css/effect-flip'
 
 const props = defineProps({
   baseUrl: { type: String, required: true },
@@ -15,19 +30,22 @@ const props = defineProps({
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
   height: { type: String, default: '496px' },
+  buttonText: { type: String, default: 'View in Fullscreen' },
 
   slidesPerView: { type: Number, default: 1 },
   breakpoints: { type: Object, default: () => ({}) },
   pagination: { type: Object, default: () => ({}) },
   lazyPreloadPrevNext: { type: Number, default: 2 },
-  buttonText: { type: String, default: 'View in Fullscreen' },
   keyboard: { type: Boolean, default: true },
   mousewheel: { type: Boolean, default: true },
   navigation: { type: Boolean, default: true },
   grabCursor: { type: Boolean, default: true },
   loop: { type: Boolean, default: true },
-  effect: { type: String, default: '' },
-  coverflowEffect: { type: Object, default: () => ({ slideShadows: false }) },
+  effect: { type: String, default: 'slide' },
+  coverflowEffect: { type: Object, default: () => ({}) },
+  cubeEffect: { type: Object, default: () => ({}) },
+  fadeEffect: { type: Object, default: () => ({}) },
+  flipEffect: { type: Object, default: () => ({}) },
 })
 
 const baseUrl = props.baseUrl.replace(/\/$/, '')
@@ -97,7 +115,16 @@ const requestFullscreen = () => {
       ref="swiperEl"
       class="swiper"
       :style="{ height: props.height }"
-      :modules="[Keyboard, Mousewheel, Navigation, Pagination, EffectCoverflow]"
+      :modules="[
+        Keyboard,
+        Mousewheel,
+        Navigation,
+        Pagination,
+        EffectCoverflow,
+        EffectCube,
+        EffectFade,
+        EffectFlip,
+      ]"
       :slides-per-view="props.slidesPerView"
       :breakpoints="props.breakpoints"
       :pagination="props.pagination"
@@ -109,6 +136,9 @@ const requestFullscreen = () => {
       :lazy-preload-prev-next="props.lazyPreloadPrevNext"
       :effect="props.effect"
       :coverflow-effect="props.coverflowEffect"
+      :cube-effect="props.cubeEffect"
+      :fade-effect="props.fadeEffect"
+      :flip-effect="props.flipEffect"
     >
       <SwiperSlide v-for="i in props.numberOfSlides" :key="i">
         <img :src="getImageSource(i)" :alt="`${props.altTextPrefix} ${i}`" loading="lazy" />

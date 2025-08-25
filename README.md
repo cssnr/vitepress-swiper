@@ -3,19 +3,21 @@
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
+[![NPM Bundle Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=npm)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/vitepress-swiper?logo=htmx&logoColor=white)](https://github.com/cssnr/vitepress-swiper)
 [![GitHub Discussions](https://img.shields.io/github/discussions/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/discussions)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/cssnr/vitepress-swiper?style=flat&logo=github)](https://github.com/cssnr/vitepress-swiper/stargazers)
 [![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github&label=org%20stars)](https://cssnr.github.io/)
 [![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=Support)](https://ko-fi.com/cssnr)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=support)](https://ko-fi.com/cssnr)
 
 # VitePress Swiper Plugin
 
 - [Install](#Install)
 - [Usage](#Usage)
 - [Options](#Options)
+- [Support](#Support)
 
 A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with Custom Options.
 
@@ -91,21 +93,20 @@ export default {
 
 To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to appear.
 
-These are the only 2 required properties ([options](#Options)):
-
 ```html
 <VPSwiper base-url="https://example.com/path" :number-of-slides="2" />
 ```
 
-The resulting URL format is: `base-url`/`#`.`file-ext`
+This generates numbers for filenames and appends them to the base url as follows:
+
+```text
+base-url / # . file-ext
+```
 
 Therefore, the above example will generate 2 image links:
 
 - `https://example.com/path/1.jpg`
 - `https://example.com/path/2.jpg`
-
-Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
-Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
 
 **Example passing additional parameters:**
 
@@ -115,53 +116,77 @@ Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-sw
   :number-of-slides="18"
   file-ext="png"
   height="400px"
-  :pagination="{ clickable: true, type: 'fraction' }"
+  :pagination="{ type: 'fraction' }"
   :mousewheel="false"
   effect="coverflow"
+  :coverflow-effect="{ slideShadows: false }"
 />
 ```
+
+> [!TIP]  
+> If you need to pass a list of files, add thumbnails, or anything else; please
+> [request a feature](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Options
 
 The options are broken down into 2 sections.
 The [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
 
-Note: String parameters do not begin with a `:` but all other types do.
+_Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
 These options are used by the plugin to generate the slideshow.
 
-| Property&nbsp;Name |  Type  | Default&nbsp;Value | Description&nbsp;of&nbsp;Property&nbsp;Value |
-| :----------------- | :----: | :----------------- | :------------------------------------------- |
-| base-url           | String | ❗ Required        | Base URL for the Swiper images.              |
-| :number-of-slides  | Number | ❗ Required        | Number of slides to generate.                |
-| alt-text-prefix    | String | `Loading`          | Prefix text for slide `alt` attributes.      |
-| file-ext           | String | `jpg`              | File extension used for slide images.        |
-| :pad-start         | Number | `1`                | Pad image numbers with `0`'s.                |
-| height             | String | `496px`            | CSS string height applied to the Swiper.     |
+| Property&nbsp;Name |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Property&nbsp;Value |
+| :----------------- | :------------------: | :----: | :------------------------------------------- |
+| base-url           |     ❗ Required      | String | Base URL for the Swiper images source.       |
+| :number-of-slides  |     ❗ Required      | Number | Number of slides to generate.                |
+| alt-text-prefix    |      `Loading`       | String | Prefix text for `alt` attributes.            |
+| file-ext           |        `jpg`         | String | File extension for image source url.         |
+| :pad-start         |         `1`          | Number | Pad image name numbers with `0`'s.           |
+| height             |       `496px`        | String | CSS string height applied to the Swiper.     |
+| button-text        | `View in Fullscreen` | String | Text label for fullscreen button.            |
 
 ### Swiper Options
 
 Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property&nbsp;Value |
-| :---------------------- | :-----: | :------------------------ | :------------------------------------------- |
-| :slides-per-view        | Number  | `1`                       | Number of slides shown per view.             |
-| :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                   |
-| :pagination             | Object  | `{}`                      | Pagination configuration.                    |
-| :lazy-preload-prev-next | Number  | `2`                       | Number of lazy loaded slides before/after.   |
-| button-text             | String  | `View in Fullscreen`      | Text label for fullscreen button.            |
-| :keyboard               | Boolean | `true`                    | Enable/disable keyboard navigation.          |
-| :mousewheel             | Boolean | `true`                    | Enable/disable mouse wheel navigation.       |
-| :navigation             | Boolean | `true`                    | Enable/disable navigation arrows.            |
-| :grab-cursor            | Boolean | `true`                    | Enable/disable grab cursor on hover.         |
-| :loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.         |
-| effect                  | String  | ` `                       | `slide`, `fade`, `cube`, `coverflow`, `flip` |
-| :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`       |
+| Property&nbsp;Name      | Default |  Type   | Description&nbsp;of&nbsp;Property&nbsp;Value                                                       |
+| :---------------------- | :-----: | :-----: | :------------------------------------------------------------------------------------------------- |
+| :slides-per-view        |   `1`   | Number  | Number of slides shown per view.                                                                   |
+| :breakpoints            |  `{ }`  | Object  | Breakpoints params [🌐](https://swiperjs.com/swiper-api#param-breakpoints)                         |
+| :pagination             |  `{ }`  | Object  | Pagination params (`false` to disable) [🌐](https://swiperjs.com/swiper-api#pagination-parameters) |
+| :lazy-preload-prev-next |   `2`   | Number  | Number of lazy loaded slides before/after.                                                         |
+| :keyboard               | `true`  | Boolean | Enable/disable keyboard navigation.                                                                |
+| :mousewheel             | `true`  | Boolean | Enable/disable mouse wheel navigation.                                                             |
+| :navigation             | `true`  | Boolean | Enable/disable navigation arrows.                                                                  |
+| :grab-cursor            | `true`  | Boolean | Enable/disable grab cursor on hover.                                                               |
+| :loop                   | `true`  | Boolean | Enable/disable continuous loop mode.                                                               |
+| effect                  | `slide` | String  | `slide`, `coverflow`, `cube`, `fade`, `flip`                                                       |
+| :coverflow-effect       |  `{ }`  | Object  | EffectCoverflow params [🌐](https://swiperjs.com/swiper-api#coverflow-effect-parameters)           |
+| :cube-effect            |  `{ }`  | Object  | EffectCube params [🌐](https://swiperjs.com/swiper-api#cube-effect-parameters)                     |
+| :fade-effect            |  `{ }`  | Object  | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)                     |
+| :flip-effect            |  `{ }`  | Object  | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)                     |
 
-> [!TIP]
+> [!TIP]  
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
+
+## Support
+
+Please let us know if you run into any [issues](https://github.com/cssnr/vitepress-swiper/issues)
+or want to see [new features](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests)...
+
+For general help or to request a feature:
+
+- Q&A Discussion: https://github.com/cssnr/vitepress-swiper/discussions/categories/q-a
+- Request a Feature: https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests
+
+If you are experiencing an issue/bug or getting unexpected results:
+
+- Report an Issue: https://github.com/cssnr/vitepress-swiper/issues
+- Chat with us on Discord: https://discord.gg/wXy6m2X8wY
+- Provide General Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=VitePress%20Swiper)
 
 # Contributing
 
