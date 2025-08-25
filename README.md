@@ -46,8 +46,8 @@ Then import it in your `.vitepress/theme/index.js`:
 ```javascript
 import DefaultTheme from 'vitepress/theme'
 
-import VPSwiper from 'vitepress-swiper' // add this line
-import 'vitepress-swiper/style.css' // add this line
+import VPSwiper from '@cssnr/vitepress-swiper' // add this line
+import '@cssnr/vitepress-swiper/style.css' // add this line
 
 export default {
   ...DefaultTheme,
