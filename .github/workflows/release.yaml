@@ -9,6 +9,12 @@ jobs:
     name: "Release"
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      id-token: write
+      contents: read
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/@cssnr/vitepress-swiper
 
     steps:
       - name: "Checkout"
