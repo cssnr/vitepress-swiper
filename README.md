@@ -97,12 +97,12 @@ Therefore, the above example will generate 2 image links:
 - https://example.com/path/1.jpg
 - https://example.com/path/2.jpg
 
-_Note: this can be modified to include prefixes, start numbers, or accept a list of strings.
-Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options._
+Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
+Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
 
 ## Options
 
-_Note: String parameters do not begin with a `:` but other types do._
+Note: String parameters do not begin with a `:` but other types do.
 
 | Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
 | ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
