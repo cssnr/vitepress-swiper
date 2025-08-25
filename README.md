@@ -102,7 +102,7 @@ Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-sw
 
 ## Options
 
-Note: String parameters do not begin with a `:` but other types do.
+Note: String parameters do not begin with a `:` but all other types do.
 
 | Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
 | ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
@@ -125,7 +125,7 @@ Note: String parameters do not begin with a `:` but other types do.
 | effect                  | String  | ` `                       | [`slide`, `fade`, `cube`, `coverflow`, `flip`] |
 | :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`         |
 
-All the Swiper Parameters are documented here: https://swiperjs.com/swiper-api#parameters
+Note: All the Swiper Parameters are documented here: https://swiperjs.com/swiper-api#parameters
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
