@@ -14,11 +14,11 @@
 - [Usage](#Usage)
 - [Options](#Options)
 
-A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image/Photo Gallery.
+A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image or Photo Gallery with Custom Options.
 
-Minimal footprint with only 3 lines of setup code and 1 single Markdown tag.
+Minimal footprint, only 3 lines of setup code and 1 single Markdown tag.
 
-Easy to [install](#Install) and [use](#Usage) with lots of [options](#Options)...
+Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
 
 ## Install
 
@@ -55,7 +55,7 @@ Next, proceed the [Usage](#Usage).
 
 ### From Source
 
-To add this to your project:
+Add to your project:
 
 1. Download or clone the [src/VPSwiper.vue](src/VPSwiper.vue) file to your project.
 2. Place it to the following location: `.vitepress/theme/components/VPSwiper.vue`
@@ -82,22 +82,24 @@ export default {
 
 ## Usage
 
-To use this add a `<VPSwiper>` to your markdown. These are the only required properties:
+To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to appear.
+
+These are the only required properties ([options](#Options)):
 
 ```html
 <VPSwiper base-url="https://example.com/path" :number-of-slides="2" />
 ```
 
-The format is: `base-url`/`#`.`file-ext`
+The resulting URL format is: `base-url`/`#`.`file-ext`
 
-The above example will generate 2 image links:
+Therefore, the above example will generate 2 image links:
 
 - https://example.com/path/1.jpg
 - https://example.com/path/2.jpg
 
 ## Options
 
-Note: String parameters do not begin with a `:` but other types do.
+_Note: String parameters do not begin with a `:` but other types do._
 
 | Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
 | ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
