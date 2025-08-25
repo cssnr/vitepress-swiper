@@ -118,20 +118,20 @@ Note: String parameters do not begin with a `:` but all other types do.
 
 These options are used by the plugin to generate the slideshow.
 
-| Property&nbsp;Name | Type.  | Default&nbsp;Value | Description&nbsp;of&nbsp;Property        |
-| :----------------- | :----: | :----------------- | :--------------------------------------- |
-| base-url           | String | ❗ Required        | Base URL for the Swiper images.          |
-| :number-of-slides  | Number | ❗ Required        | Number of slides to generate.            |
-| alt-text-prefix    | String | `Loading`          | Prefix text for slide `alt` attributes.  |
-| file-ext           | String | `jpg`              | File extension used for slide images.    |
-| :pad-start         | Number | `1`                | Pad image numbers with `0`'s.            |
-| height             | String | `496px`            | CSS string height applied to the Swiper. |
+| Property&nbsp;Name |  Type  | Default&nbsp;Value | Description&nbsp;of&nbsp;Property&nbsp;Value |
+| :----------------- | :----: | :----------------- | :------------------------------------------- |
+| base-url           | String | ❗ Required        | Base URL for the Swiper images.              |
+| :number-of-slides  | Number | ❗ Required        | Number of slides to generate.                |
+| alt-text-prefix    | String | `Loading`          | Prefix text for slide `alt` attributes.      |
+| file-ext           | String | `jpg`              | File extension used for slide images.        |
+| :pad-start         | Number | `1`                | Pad image numbers with `0`'s.                |
+| height             | String | `496px`            | CSS string height applied to the Swiper.     |
 
 ### Swiper Options
 
 Swiper Parameter Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type.  | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
+| Property&nbsp;Name      |  Type   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property&nbsp;Value   |
 | :---------------------- | :-----: | :------------------------ | :--------------------------------------------- |
 | :slides-per-view        | Number  | `1`                       | Number of slides shown per view.               |
 | :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                     |
