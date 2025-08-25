@@ -123,7 +123,7 @@ Therefore, the above example will generate 2 image links:
 />
 ```
 
-> [!TIP]
+> [!TIP]  
 > If you need to pass a list of files, add thumbnails, or anything else; please
 > [request a feature](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
@@ -169,13 +169,13 @@ Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 | :fade-effect            |  `{ }`  | Object  | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)                     |
 | :flip-effect            |  `{ }`  | Object  | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)                     |
 
-> [!TIP]
+> [!TIP]  
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Support
 
-**Please let us know if you run into any [issues](https://github.com/cssnr/vitepress-swiper/issues)
-or want to see [new features](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests)...**
+Please let us know if you run into any [issues](https://github.com/cssnr/vitepress-swiper/issues)
+or want to see [new features](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests)...
 
 For general help or to request a feature:
 
