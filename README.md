@@ -31,10 +31,10 @@ Live Demos:
 
 There are 2 ways to install this plugin based on preference.
 
-1. [As a Dependency](#as-dependency) - Easiest, minimal footprint, no source access
-2. [From the Source](#from-source) - Adds 1 file to your project, full source access
+1. [As a Dependency](#as-a-dependency) - Easiest, minimal footprint, no source access
+2. [From the Source](#from-the-source) - Adds 1 file to your project, full source access
 
-### As Dependency
+### As a Dependency
 
 NPM Package: https://www.npmjs.com/package/@cssnr/vitepress-swiper
 
@@ -60,7 +60,7 @@ export default {
 
 Proceed to [Usage](#Usage).
 
-### From Source
+### From the Source
 
 Add to your project:
 
@@ -129,22 +129,22 @@ These options are used by the plugin to generate the slideshow.
 
 ### Swiper Options
 
-Swiper Parameter Documentation: https://swiperjs.com/swiper-api#parameters
+Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property&nbsp;Value   |
-| :---------------------- | :-----: | :------------------------ | :--------------------------------------------- |
-| :slides-per-view        | Number  | `1`                       | Number of slides shown per view.               |
-| :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                     |
-| :pagination             | Object  | `{}`                      | Pagination configuration.                      |
-| :lazy-preload-prev-next | Number  | `2`                       | Number of lazy-loaded slides before/after.     |
-| button-text             | String  | `View in Fullscreen`      | Text label for fullscreen button.              |
-| :keyboard               | Boolean | `true`                    | Enable/disable keyboard navigation.            |
-| :mousewheel             | Boolean | `true`                    | Enable/disable mouse wheel navigation.         |
-| :navigation             | Boolean | `true`                    | Enable/disable navigation arrows.              |
-| :grab-cursor            | Boolean | `true`                    | Enable/disable grab cursor on hover.           |
-| :loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.           |
-| effect                  | String  | ` `                       | [`slide`, `fade`, `cube`, `coverflow`, `flip`] |
-| :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`         |
+| Property&nbsp;Name      |  Type   | Default&nbsp;Value      | Description&nbsp;of&nbsp;Property&nbsp;Value |
+| :---------------------- | :-----: | :---------------------- | :------------------------------------------- |
+| :slides-per-view        | Number  | `1`                     | Number of slides shown per view.             |
+| :breakpoints            | Object  | `{}`                    | Breakpoints configuration.                   |
+| :pagination             | Object  | `{}`                    | Pagination configuration.                    |
+| :lazy-preload-prev-next | Number  | `2`                     | Number of lazy loaded slides before/after.   |
+| button-text             | String  | `View in Fullscreen`    | Text label for fullscreen button.            |
+| :keyboard               | Boolean | `true`                  | Enable/disable keyboard navigation.          |
+| :mousewheel             | Boolean | `true`                  | Enable/disable mouse wheel navigation.       |
+| :navigation             | Boolean | `true`                  | Enable/disable navigation arrows.            |
+| :grab-cursor            | Boolean | `true`                  | Enable/disable grab cursor on hover.         |
+| :loop                   | Boolean | `true`                  | Enable/disable continuous loop mode.         |
+| effect                  | String  | ` `                     | `slide`, `fade`, `cube`, `coverflow`, `flip` |
+| :coverflow-effect       | Object  | `{slideShadows: false}` | Effect params for: `effect: coverflow`       |
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
