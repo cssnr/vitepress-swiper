@@ -123,7 +123,7 @@ Therefore, the above example will generate 2 image links:
 ```
 
 > [!TIP]
-> If you need to pass a list of files, add thumbnails, or anything else,
+> If you need to pass a list of files, add thumbnails, or anything else; please
 > [request a feature](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Options
