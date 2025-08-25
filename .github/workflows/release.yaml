@@ -8,26 +8,73 @@ jobs:
   release:
     name: "Release"
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: write
+    timeout-minutes: 10
 
     steps:
-      - name: "Update Tags"
-        id: tags
-        uses: cssnr/update-version-tags-action@v1
+      - name: "Checkout"
+        uses: actions/checkout@v4
 
-      - name: "Debug Tags"
+      - name: "Debug Event"
         continue-on-error: true
         run: |
-          echo "github.ref_name: ${{ github.ref_name }}"
-          echo "steps.tags.outputs.tags: ${{ steps.tags.outputs.tags }}"
+          echo "ref: ${{ github.ref }}"
+          echo "event_name: ${{ github.event_name }}"
+          echo "github.event.repository.name: ${{ github.event.repository.name }}"
+
+          echo "::group::cat event.json"
+          cat "${GITHUB_EVENT_PATH}"
+          echo "::endgroup::"
+
+      - name: "Update Package Version"
+        uses: cssnr/update-json-value-action@v1
+        with:
+          file: "package.json"
+
+      - name: "Debug Package File"
+        continue-on-error: true
+        run: |
+          cat package.json
+
+      - name: "Setup Node 22"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          #cache: npm
+
+      - name: "Install"
+        run: |
+          npm ci
+
+      - name: "Build"
+        run: |
+          npm run build
+
+      - name: "Upload to Actions"
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      #- name: "Upload to Release"
+      #  if: ${{ github.event_name == 'release' }}
+      #  uses: svenstaro/upload-release-action@v2
+      #  with:
+      #    file: dist/*
+      #    tag: ${{ github.ref }}
+      #    overwrite: true
+      #    file_glob: true
+
+      - name: "Publish"
+        if: ${{ !github.event.release.prerelease }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm publish --provenance --access public
 
       - name: "Update Release Notes Action"
         uses: smashedr/update-release-notes-action@master
         continue-on-error: true
         with:
-          tags: "${{ steps.tags.outputs.tags }}"
           location: tail
 
       - name: "Send Failure Notification"

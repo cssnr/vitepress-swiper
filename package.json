@@ -1,13 +1,15 @@
 {
-  "name": "vitepress-swiper",
-  "version": "1.0.0",
-  "description": "Swiper Plugin for VitePress with Custom Options.",
-  "homepage": "https://github.com/cssnr/vitepress-swiper?tab=readme-ov-file#readme",
-  "bugs": "https://github.com/cssnr/vitepress-swiper/issues",
+  "name": "@cssnr/vitepress-swiper",
+  "version": "0.0.1",
   "license": "GPL-3.0-only",
+  "description": "A VitePress Swiper Plugin to Easily add an Image or Photo Gallery with Custom Options.",
+  "homepage": "https://github.com/cssnr/vitepress-swiper",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cssnr/vitepress-swiper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cssnr/vitepress-swiper/issues"
   },
   "funding": {
     "type": "ko-fi",
