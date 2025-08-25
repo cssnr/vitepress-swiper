@@ -107,6 +107,20 @@ Therefore, the above example will generate 2 image links:
 Note: this can be modified to include prefixes, start numbers, or accept a list of strings.  
 Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options.
 
+**Example passing additional parameters:**
+
+```html
+<VPSwiper
+  base-url="https://example.com/path"
+  :number-of-slides="18"
+  file-ext="png"
+  height="400px"
+  :pagination="{ clickable: true, type: 'fraction' }"
+  :mousewheel="false"
+  effect="coverflow"
+/>
+```
+
 ## Options
 
 The options are broken down into 2 sections.
@@ -131,20 +145,20 @@ These options are used by the plugin to generate the slideshow.
 
 Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type   | Default&nbsp;Value      | Description&nbsp;of&nbsp;Property&nbsp;Value |
-| :---------------------- | :-----: | :---------------------- | :------------------------------------------- |
-| :slides-per-view        | Number  | `1`                     | Number of slides shown per view.             |
-| :breakpoints            | Object  | `{}`                    | Breakpoints configuration.                   |
-| :pagination             | Object  | `{}`                    | Pagination configuration.                    |
-| :lazy-preload-prev-next | Number  | `2`                     | Number of lazy loaded slides before/after.   |
-| button-text             | String  | `View in Fullscreen`    | Text label for fullscreen button.            |
-| :keyboard               | Boolean | `true`                  | Enable/disable keyboard navigation.          |
-| :mousewheel             | Boolean | `true`                  | Enable/disable mouse wheel navigation.       |
-| :navigation             | Boolean | `true`                  | Enable/disable navigation arrows.            |
-| :grab-cursor            | Boolean | `true`                  | Enable/disable grab cursor on hover.         |
-| :loop                   | Boolean | `true`                  | Enable/disable continuous loop mode.         |
-| effect                  | String  | ` `                     | `slide`, `fade`, `cube`, `coverflow`, `flip` |
-| :coverflow-effect       | Object  | `{slideShadows: false}` | Effect params for: `effect: coverflow`       |
+| Property&nbsp;Name      |  Type   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property&nbsp;Value |
+| :---------------------- | :-----: | :------------------------ | :------------------------------------------- |
+| :slides-per-view        | Number  | `1`                       | Number of slides shown per view.             |
+| :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                   |
+| :pagination             | Object  | `{}`                      | Pagination configuration.                    |
+| :lazy-preload-prev-next | Number  | `2`                       | Number of lazy loaded slides before/after.   |
+| button-text             | String  | `View in Fullscreen`      | Text label for fullscreen button.            |
+| :keyboard               | Boolean | `true`                    | Enable/disable keyboard navigation.          |
+| :mousewheel             | Boolean | `true`                    | Enable/disable mouse wheel navigation.       |
+| :navigation             | Boolean | `true`                    | Enable/disable navigation arrows.            |
+| :grab-cursor            | Boolean | `true`                    | Enable/disable grab cursor on hover.         |
+| :loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.         |
+| effect                  | String  | ` `                       | `slide`, `fade`, `cube`, `coverflow`, `flip` |
+| :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`       |
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
