@@ -24,7 +24,7 @@ Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Opt
 
 There are 2 ways to install this plugin based on preference.
 
-1. [Ad a Dependency](#as-dependency) - Easiest, minimal footprint, no source access
+1. [As a Dependency](#as-dependency) - Easiest, minimal footprint, no source access
 2. [From the Source](#from-source) - Adds 1 file to your project, full source access
 
 ### As Dependency
