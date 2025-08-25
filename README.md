@@ -119,7 +119,7 @@ Note: String parameters do not begin with a `:` but all other types do.
 These options are used by the plugin to generate the slideshow.
 
 | Property&nbsp;Name | Type.  | Default&nbsp;Value | Description&nbsp;of&nbsp;Property        |
-| ------------------ | ------ | ------------------ | ---------------------------------------- |
+| :----------------- | :----: | :----------------- | :--------------------------------------- |
 | base-url           | String | ❗ Required        | Base URL for the Swiper images.          |
 | :number-of-slides  | Number | ❗ Required        | Number of slides to generate.            |
 | alt-text-prefix    | String | `Loading`          | Prefix text for slide `alt` attributes.  |
@@ -131,8 +131,8 @@ These options are used by the plugin to generate the slideshow.
 
 Swiper Parameter Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      | Type.   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
-| ----------------------- | ------- | ------------------------- | ---------------------------------------------- |
+| Property&nbsp;Name      |  Type.  | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property              |
+| :---------------------- | :-----: | :------------------------ | :--------------------------------------------- |
 | :slides-per-view        | Number  | `1`                       | Number of slides shown per view.               |
 | :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                     |
 | :pagination             | Object  | `{}`                      | Pagination configuration.                      |
