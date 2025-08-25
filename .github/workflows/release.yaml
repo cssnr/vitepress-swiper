@@ -14,6 +14,17 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v4
 
+      - name: "Debug Event"
+        continue-on-error: true
+        run: |
+          echo "ref: ${{ github.ref }}"
+          echo "event_name: ${{ github.event_name }}"
+          echo "github.event.repository.name: ${{ github.event.repository.name }}"
+
+          echo "::group::cat event.json"
+          cat "${GITHUB_EVENT_PATH}"
+          echo "::endgroup::"
+
       - name: "Update Package Version"
         uses: cssnr/update-json-value-action@v1
         with:

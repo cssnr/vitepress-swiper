@@ -20,6 +20,10 @@ Minimal footprint, only 3 lines of setup code and 1 Markdown tag per gallery.
 
 Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
 
+Live Demos:
+
+- https://zipline-android.cssnr.com/guides/features#screenshots
+
 ## Install
 
 There are 2 ways to install this plugin based on preference.
