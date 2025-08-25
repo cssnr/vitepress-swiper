@@ -11,7 +11,7 @@ jobs:
     timeout-minutes: 10
     permissions:
       id-token: write
-      contents: read
+      contents: write
     environment:
       name: npm
       url: https://www.npmjs.com/package/@cssnr/vitepress-swiper
@@ -61,14 +61,18 @@ jobs:
           name: dist
           path: dist
 
-      #- name: "Upload to Release"
-      #  if: ${{ github.event_name == 'release' }}
-      #  uses: svenstaro/upload-release-action@v2
-      #  with:
-      #    file: dist/*
-      #    tag: ${{ github.ref }}
-      #    overwrite: true
-      #    file_glob: true
+      - name: "Archive Distribution"
+        continue-on-error: true
+        run: |
+          zip -r dist.zip dist
+
+      - name: "Upload to Release"
+        if: ${{ github.event_name == 'release' }}
+        uses: svenstaro/upload-release-action@v2
+        continue-on-error: true
+        with:
+          file: dist.zip
+          tag: ${{ github.ref }}
 
       - name: "Publish"
         if: ${{ !github.event.release.prerelease }}

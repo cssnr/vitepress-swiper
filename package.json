@@ -2,7 +2,7 @@
   "name": "@cssnr/vitepress-swiper",
   "version": "0.0.1",
   "license": "GPL-3.0-only",
-  "description": "A VitePress Swiper Plugin to Easily add an Image or Photo Gallery with Custom Options.",
+  "description": "A VitePress Swiper Plugin to Easily add an Image Gallery or Photo Slideshow with Custom Options.",
   "homepage": "https://github.com/cssnr/vitepress-swiper",
   "repository": {
     "type": "git",
@@ -19,8 +19,9 @@
     "vitepress",
     "swiper",
     "image",
+    "gallery",
     "photo",
-    "gallery"
+    "slideshow"
   ],
   "main": "dist/VPSwiper.umd.js",
   "module": "dist/VPSwiper.es.js",
