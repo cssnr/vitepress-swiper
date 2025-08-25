@@ -147,22 +147,22 @@ These options are used by the plugin to generate the slideshow.
 
 Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type   | Default&nbsp;Value | Description&nbsp;of&nbsp;Property&nbsp;Value                                             |
-| :---------------------- | :-----: | :----------------- | :--------------------------------------------------------------------------------------- |
-| :slides-per-view        | Number  | `1`                | Number of slides shown per view.                                                         |
-| :breakpoints            | Object  | `{ }`              | Breakpoints configuration [🌐](https://swiperjs.com/swiper-api#param-breakpoints)        |
-| :pagination             | Object  | `{ }`              | Pagination configuration [🌐](https://swiperjs.com/swiper-api#pagination-parameters)     |
-| :lazy-preload-prev-next | Number  | `2`                | Number of lazy loaded slides before/after.                                               |
-| :keyboard               | Boolean | `true`             | Enable/disable keyboard navigation.                                                      |
-| :mousewheel             | Boolean | `true`             | Enable/disable mouse wheel navigation.                                                   |
-| :navigation             | Boolean | `true`             | Enable/disable navigation arrows.                                                        |
-| :grab-cursor            | Boolean | `true`             | Enable/disable grab cursor on hover.                                                     |
-| :loop                   | Boolean | `true`             | Enable/disable continuous loop mode.                                                     |
-| effect                  | String  | `slide`            | `slide`, `coverflow`, `cube`, `fade`, `flip`                                             |
-| :coverflow-effect       | Object  | `{ }`              | EffectCoverflow params [🌐](https://swiperjs.com/swiper-api#coverflow-effect-parameters) |
-| :cube-effect            | Object  | `{ }`              | EffectCube params [🌐](https://swiperjs.com/swiper-api#cube-effect-parameters)           |
-| :fade-effect            | Object  | `{ }`              | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)           |
-| :flip-effect            | Object  | `{ }`              | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)           |
+| Property&nbsp;Name      |  Type   | Default&nbsp;Value | Description&nbsp;of&nbsp;Property&nbsp;Value                                                       |
+| :---------------------- | :-----: | :----------------- | :------------------------------------------------------------------------------------------------- |
+| :slides-per-view        | Number  | `1`                | Number of slides shown per view.                                                                   |
+| :breakpoints            | Object  | `{ }`              | Breakpoints params [🌐](https://swiperjs.com/swiper-api#param-breakpoints)                         |
+| :pagination             | Object  | `{ }`              | Pagination params (`false` to disable) [🌐](https://swiperjs.com/swiper-api#pagination-parameters) |
+| :lazy-preload-prev-next | Number  | `2`                | Number of lazy loaded slides before/after.                                                         |
+| :keyboard               | Boolean | `true`             | Enable/disable keyboard navigation.                                                                |
+| :mousewheel             | Boolean | `true`             | Enable/disable mouse wheel navigation.                                                             |
+| :navigation             | Boolean | `true`             | Enable/disable navigation arrows.                                                                  |
+| :grab-cursor            | Boolean | `true`             | Enable/disable grab cursor on hover.                                                               |
+| :loop                   | Boolean | `true`             | Enable/disable continuous loop mode.                                                               |
+| effect                  | String  | `slide`            | `slide`, `coverflow`, `cube`, `fade`, `flip`                                                       |
+| :coverflow-effect       | Object  | `{ }`              | EffectCoverflow params [🌐](https://swiperjs.com/swiper-api#coverflow-effect-parameters)           |
+| :cube-effect            | Object  | `{ }`              | EffectCube params [🌐](https://swiperjs.com/swiper-api#cube-effect-parameters)                     |
+| :fade-effect            | Object  | `{ }`              | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)                     |
+| :flip-effect            | Object  | `{ }`              | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)                     |
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
