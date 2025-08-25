@@ -51,12 +51,16 @@ jobs:
         run: |
           npm ci
 
-      - name: "Build"
+      - name: "Publish"
+        if: ${{ !github.event.release.prerelease }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm run build
+          npm publish --provenance --access public
 
       - name: "Upload to Actions"
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: dist
           path: dist
@@ -73,13 +77,6 @@ jobs:
         with:
           file: dist.zip
           tag: ${{ github.ref }}
-
-      - name: "Publish"
-        if: ${{ !github.event.release.prerelease }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          npm publish --provenance --access public
 
       - name: "Update Release Notes Action"
         uses: smashedr/update-release-notes-action@master
