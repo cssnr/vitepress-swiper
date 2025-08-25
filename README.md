@@ -115,9 +115,10 @@ Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-sw
   :number-of-slides="18"
   file-ext="png"
   height="400px"
-  :pagination="{ clickable: true, type: 'fraction' }"
+  :pagination="{ type: 'fraction' }"
   :mousewheel="false"
   effect="coverflow"
+  :coverflow-effect="{ slideShadows: false }"
 />
 ```
 
@@ -132,33 +133,36 @@ Note: String parameters do not begin with a `:` but all other types do.
 
 These options are used by the plugin to generate the slideshow.
 
-| Property&nbsp;Name |  Type  | Default&nbsp;Value | Description&nbsp;of&nbsp;Property&nbsp;Value |
-| :----------------- | :----: | :----------------- | :------------------------------------------- |
-| base-url           | String | ❗ Required        | Base URL for the Swiper images.              |
-| :number-of-slides  | Number | ❗ Required        | Number of slides to generate.                |
-| alt-text-prefix    | String | `Loading`          | Prefix text for slide `alt` attributes.      |
-| file-ext           | String | `jpg`              | File extension used for slide images.        |
-| :pad-start         | Number | `1`                | Pad image numbers with `0`'s.                |
-| height             | String | `496px`            | CSS string height applied to the Swiper.     |
+| Property&nbsp;Name |  Type  | Default&nbsp;Value   | Description&nbsp;of&nbsp;Property&nbsp;Value |
+| :----------------- | :----: | :------------------- | :------------------------------------------- |
+| base-url           | String | ❗ Required          | Base URL for the Swiper images source.       |
+| :number-of-slides  | Number | ❗ Required          | Number of slides to generate.                |
+| alt-text-prefix    | String | `Loading`            | Prefix text for `alt` attributes.            |
+| file-ext           | String | `jpg`                | File extension for image source url.         |
+| :pad-start         | Number | `1`                  | Pad image name numbers with `0`'s.           |
+| height             | String | `496px`              | CSS string height applied to the Swiper.     |
+| button-text        | String | `View in Fullscreen` | Text label for fullscreen button.            |
 
 ### Swiper Options
 
 Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name      |  Type   | Default&nbsp;Value        | Description&nbsp;of&nbsp;Property&nbsp;Value |
-| :---------------------- | :-----: | :------------------------ | :------------------------------------------- |
-| :slides-per-view        | Number  | `1`                       | Number of slides shown per view.             |
-| :breakpoints            | Object  | `{}`                      | Breakpoints configuration.                   |
-| :pagination             | Object  | `{}`                      | Pagination configuration.                    |
-| :lazy-preload-prev-next | Number  | `2`                       | Number of lazy loaded slides before/after.   |
-| button-text             | String  | `View in Fullscreen`      | Text label for fullscreen button.            |
-| :keyboard               | Boolean | `true`                    | Enable/disable keyboard navigation.          |
-| :mousewheel             | Boolean | `true`                    | Enable/disable mouse wheel navigation.       |
-| :navigation             | Boolean | `true`                    | Enable/disable navigation arrows.            |
-| :grab-cursor            | Boolean | `true`                    | Enable/disable grab cursor on hover.         |
-| :loop                   | Boolean | `true`                    | Enable/disable continuous loop mode.         |
-| effect                  | String  | ` `                       | `slide`, `fade`, `cube`, `coverflow`, `flip` |
-| :coverflow-effect       | Object  | `{ slideShadows: false }` | Effect params for: `effect: coverflow`       |
+| Property&nbsp;Name      |  Type   | Default&nbsp;Value | Description&nbsp;of&nbsp;Property&nbsp;Value                                             |
+| :---------------------- | :-----: | :----------------- | :--------------------------------------------------------------------------------------- |
+| :slides-per-view        | Number  | `1`                | Number of slides shown per view.                                                         |
+| :breakpoints            | Object  | `{ }`              | Breakpoints configuration [🌐](https://swiperjs.com/swiper-api#param-breakpoints)        |
+| :pagination             | Object  | `{ }`              | Pagination configuration [🌐](https://swiperjs.com/swiper-api#pagination-parameters)     |
+| :lazy-preload-prev-next | Number  | `2`                | Number of lazy loaded slides before/after.                                               |
+| :keyboard               | Boolean | `true`             | Enable/disable keyboard navigation.                                                      |
+| :mousewheel             | Boolean | `true`             | Enable/disable mouse wheel navigation.                                                   |
+| :navigation             | Boolean | `true`             | Enable/disable navigation arrows.                                                        |
+| :grab-cursor            | Boolean | `true`             | Enable/disable grab cursor on hover.                                                     |
+| :loop                   | Boolean | `true`             | Enable/disable continuous loop mode.                                                     |
+| effect                  | String  | `slide`            | `slide`, `coverflow`, `cube`, `fade`, `flip`                                             |
+| :coverflow-effect       | Object  | `{ }`              | EffectCoverflow params [🌐](https://swiperjs.com/swiper-api#coverflow-effect-parameters) |
+| :cube-effect            | Object  | `{ }`              | EffectCube params [🌐](https://swiperjs.com/swiper-api#cube-effect-parameters)           |
+| :fade-effect            | Object  | `{ }`              | EffectFade params [🌐](https://swiperjs.com/swiper-api#fade-effect-parameters)           |
+| :flip-effect            | Object  | `{ }`              | EffectFlip params [🌐](https://swiperjs.com/swiper-api#flip-effect-parameters)           |
 
 > [!TIP]
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
