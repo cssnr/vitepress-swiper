@@ -16,7 +16,7 @@
 
 A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image or Photo Gallery with Custom Options.
 
-Minimal footprint, only 3 lines of setup code and 1 single Markdown tag.
+Minimal footprint, only 3 lines of setup code and 1 Markdown tag per gallery.
 
 Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
 
@@ -51,7 +51,7 @@ export default {
 }
 ```
 
-Next, proceed the [Usage](#Usage).
+Proceed to [Usage](#Usage).
 
 ### From Source
 
@@ -84,7 +84,7 @@ export default {
 
 To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to appear.
 
-These are the only required properties ([options](#Options)):
+These are the only 2 required properties ([options](#Options)):
 
 ```html
 <VPSwiper base-url="https://example.com/path" :number-of-slides="2" />
@@ -96,6 +96,9 @@ Therefore, the above example will generate 2 image links:
 
 - https://example.com/path/1.jpg
 - https://example.com/path/2.jpg
+
+_Note: this can be modified to include prefixes, start numbers, or accept a list of strings.
+Please open a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) if you would like to see more options._
 
 ## Options
 
