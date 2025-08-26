@@ -29,10 +29,11 @@ const props = defineProps({
   altTextPrefix: { type: String, default: 'Loading' },
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
-  height: { type: String, default: '496px' },
+  height: { type: String, default: '' },
   buttonText: { type: String, default: 'View in Fullscreen' },
 
   slidesPerView: { type: Number, default: 1 },
+  spaceBetween: { type: [Number], default: 0 },
   breakpoints: { type: Object, default: () => ({}) },
   pagination: { type: Object, default: () => ({}) },
   lazyPreloadPrevNext: { type: Number, default: 2 },
@@ -59,23 +60,33 @@ const requestFullscreen = () => {
   // noinspection JSUnresolvedReference
   swiperEl?.value?.$el?.requestFullscreen?.()
 }
+
+const swiperStyle = {}
+if (props.height) swiperStyle.height = props.height
 </script>
 
-<style>
-:root {
+<style scoped>
+.swiper {
   --swiper-pagination-fraction-color: var(--vp-c-purple-1);
+  --swiper-pagination-color: var(--vp-c-purple-1);
   --swiper-navigation-color: var(--vp-c-purple-1);
   --swiper-navigation-sides-offset: 4px;
-}
-
-.swiper {
   background-color: var(--vp-code-block-bg);
   border-radius: 8px;
 }
 
-.swiper img {
-  width: 100%;
-  height: 100%;
+/*noinspection CssUnusedSymbol*/
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -114,7 +125,7 @@ const requestFullscreen = () => {
     <Swiper
       ref="swiperEl"
       class="swiper"
-      :style="{ height: props.height }"
+      :style="swiperStyle"
       :modules="[
         Keyboard,
         Mousewheel,
@@ -126,6 +137,7 @@ const requestFullscreen = () => {
         EffectFlip,
       ]"
       :slides-per-view="props.slidesPerView"
+      :space-between="props.spaceBetween"
       :breakpoints="props.breakpoints"
       :pagination="props.pagination"
       :keyboard="props.keyboard"

@@ -145,7 +145,7 @@ These options are used by the plugin to generate the slideshow.
 | alt-text-prefix    |      `Loading`       | String | Prefix text for `alt` attributes.            |
 | file-ext           |        `jpg`         | String | File extension for image source url.         |
 | :pad-start         |         `1`          | Number | Pad image name numbers with `0`'s.           |
-| height             |       `496px`        | String | CSS string height applied to the Swiper.     |
+| height             |         ` `          | String | CSS height string, auto by default.          |
 | button-text        | `View in Fullscreen` | String | Text label for fullscreen button.            |
 
 ### Swiper Options
@@ -155,6 +155,7 @@ Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 | Property&nbsp;Name      | Default |  Type   | Description&nbsp;of&nbsp;Property&nbsp;Value                                                       |
 | :---------------------- | :-----: | :-----: | :------------------------------------------------------------------------------------------------- |
 | :slides-per-view        |   `1`   | Number  | Number of slides shown per view.                                                                   |
+| :space-between          |   `0`   | Number  | Space between slides in pixels.                                                                    |
 | :breakpoints            |  `{ }`  | Object  | Breakpoints params [🌐](https://swiperjs.com/swiper-api#param-breakpoints)                         |
 | :pagination             |  `{ }`  | Object  | Pagination params (`false` to disable) [🌐](https://swiperjs.com/swiper-api#pagination-parameters) |
 | :lazy-preload-prev-next |   `2`   | Number  | Number of lazy loaded slides before/after.                                                         |
