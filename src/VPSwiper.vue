@@ -26,11 +26,12 @@ import 'swiper/css/effect-flip'
 const props = defineProps({
   baseUrl: { type: String, required: true },
   numberOfSlides: { type: Number, required: true },
-  altTextPrefix: { type: String, default: 'Loading' },
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
-  height: { type: String, default: '' },
+  altTextPrefix: { type: String, default: 'Loading' },
   buttonText: { type: String, default: 'View in Fullscreen' },
+  height: { type: String, default: '' },
+  marginTop: { type: String, default: '' },
 
   slidesPerView: { type: Number, default: 1 },
   spaceBetween: { type: [Number], default: 0 },
@@ -99,7 +100,11 @@ if (props.height) swiperStyle.height = props.height
 </style>
 
 <template>
-  <button @click="requestFullscreen" class="inline-button">
+  <button
+    @click="requestFullscreen"
+    class="inline-button"
+    :style="props.marginTop ? { marginTop: props.marginTop } : {}"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"

@@ -142,11 +142,12 @@ These options are used by the plugin to generate the slideshow.
 | :----------------- | :------------------: | :----: | :------------------------------------------- |
 | base-url           |     ❗ Required      | String | Base URL for the Swiper images source.       |
 | :number-of-slides  |     ❗ Required      | Number | Number of slides to generate.                |
-| alt-text-prefix    |      `Loading`       | String | Prefix text for `alt` attributes.            |
 | file-ext           |        `jpg`         | String | File extension for image source url.         |
 | :pad-start         |         `1`          | Number | Pad image name numbers with `0`'s.           |
-| height             |         ` `          | String | CSS height string, auto by default.          |
+| alt-text-prefix    |      `Loading`       | String | Prefix text for `alt` attributes.            |
 | button-text        | `View in Fullscreen` | String | Text label for fullscreen button.            |
+| height             |         ` `          | String | CSS height string, auto by default.          |
+| margin-top         |         ` `          | String | CSS marginTop string, none by default.       |
 
 ### Swiper Options
 
