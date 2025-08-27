@@ -93,9 +93,26 @@ export default {
 
 To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to appear.
 
-```html
-<VPSwiper base-url="https://example.com/path" :number-of-slides="2" />
+You can provide a [list](#slides-list) of `:slides` or generate
+a [dynamic](#dynamic-url-generation) `:number-of-slides` using a `base-url`.
+
+### Slides List
+
+To generate from a list of `:slides` add them in this format.
+
+```vue
+<VPSwiper
+  :slides="[
+    'https://example.com/path/1.jpg',
+    'https://example.com/path/2.jpg',
+    'https://example.com/path/3.jpg',
+  ]"
+/>
 ```
+
+You can add any [additional options](#Options).
+
+### Dynamic URL Generation
 
 This generates numbers for filenames and appends them to the base url as follows:
 
@@ -103,10 +120,17 @@ This generates numbers for filenames and appends them to the base url as follows
 base-url / # . file-ext
 ```
 
-Therefore, the above example will generate 2 image links:
+Therefore, to generate 3 slides you would set.
+
+```vue
+<VPSwiper base-url="https://example.com/path" :number-of-slides="3" />
+```
+
+This will generate the following slide URLs:
 
 - `https://example.com/path/1.jpg`
 - `https://example.com/path/2.jpg`
+- `https://example.com/path/3.jpg`
 
 **Example passing additional parameters:**
 
@@ -123,7 +147,7 @@ Therefore, the above example will generate 2 image links:
 ```
 
 > [!TIP]  
-> If you need to pass a list of files, add thumbnails, or anything else; please
+> If you want to show thumbnails or anything else, please
 > [request a feature](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Options
@@ -135,12 +159,13 @@ _Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
-These options are used by the plugin to generate the slideshow.
+You must provide either a `:slides` list or a `base-url` + `:number-of-slides`.
 
 | Property&nbsp;Name |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
 | :----------------- | :------------------: | :----: | :----------------------------- |
-| base-url           |     ❗ Required      | String | Base URL for image sources     |
-| :number-of-slides  |     ❗ Required      | Number | Number of slides to generate   |
+| **:slides**        |    or `base-url`     | Array  | Base URL for image sources     |
+| **base-url**       |     or `:slides`     | String | Base URL for image sources     |
+| :number-of-slides  |         `1`          | Number | Number of slides to generate   |
 | file-ext           |        `jpg`         | String | File extension url generation  |
 | :pad-start         |         `1`          | Number | Pad image names with `0`'s     |
 | alt-text-prefix    |      `Loading`       | String | Prefix for `alt` attributes    |

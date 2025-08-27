@@ -23,8 +23,9 @@ import 'swiper/css/effect-fade'
 import 'swiper/css/effect-flip'
 
 const props = defineProps({
-  baseUrl: { type: String, required: true },
-  numberOfSlides: { type: Number, required: true },
+  slides: { type: Array, default: null },
+  baseUrl: { type: String, default: null },
+  numberOfSlides: { type: Number, default: 1 },
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
   altTextPrefix: { type: String, default: 'Loading' },
@@ -34,7 +35,7 @@ const props = defineProps({
   height: { type: String, default: '' },
 
   slidesPerView: { type: Number, default: 1 },
-  spaceBetween: { type: [Number], default: 0 },
+  spaceBetween: { type: Number, default: 0 },
   lazyPreloadPrevNext: { type: Number, default: 1 },
   breakpoints: { type: Object, default: null },
   pagination: { type: Object, default: true },
@@ -60,11 +61,15 @@ if (props.effect === 'cube') swiperModules.push(EffectCube)
 if (props.effect === 'fade') swiperModules.push(EffectFade)
 if (props.effect === 'flip') swiperModules.push(EffectFlip)
 
-// TODO: Generate URL array here and allow passing an array...
-const baseUrl = props.baseUrl.replace(/\/$/, '')
-const getImageSource = (index) => {
-  const fileName = String(index).padStart(props.padStart, '0')
-  return `${baseUrl}/${fileName}.${props.fileExt}`
+let slidesList = []
+if (props.slides?.length) {
+  slidesList = props.slides
+} else if (props.baseUrl) {
+  const baseUrl = props.baseUrl.replace(/\/$/, '')
+  for (let i = 1; i <= props.numberOfSlides; i++) {
+    const fileName = String(i).padStart(props.padStart, '0')
+    slidesList.push(`${baseUrl}/${fileName}.${props.fileExt}`)
+  }
 }
 
 const swiperEl = ref(null)
@@ -157,8 +162,8 @@ if (props.height) swiperStyle.height = props.height
       :fade-effect="props.fadeEffect"
       :flip-effect="props.flipEffect"
     >
-      <SwiperSlide v-for="i in props.numberOfSlides" :key="i">
-        <img :src="getImageSource(i)" :alt="`${props.altTextPrefix} ${i}`" loading="lazy" />
+      <SwiperSlide v-for="(url, i) in slidesList" :key="i">
+        <img :src="url" :alt="`${props.altTextPrefix} ${i + 1}`" loading="lazy" />
       </SwiperSlide>
     </Swiper>
   </ClientOnly>
