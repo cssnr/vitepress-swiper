@@ -145,8 +145,9 @@ These options are used by the plugin to generate the slideshow.
 | :pad-start         |         `1`          | Number | Pad image name numbers with `0`'s.           |
 | alt-text-prefix    |      `Loading`       | String | Prefix text for `alt` attributes.            |
 | button-text        | `View in Fullscreen` | String | Text label for fullscreen button.            |
+| margin-top         |        `10px`        | String | CSS marginTop string.                        |
+| margin-bottom      |        `10px`        | String | CSS marginBottom string.                     |
 | height             |         ` `          | String | CSS height string, auto by default.          |
-| margin-top         |         ` `          | String | CSS marginTop string, none by default.       |
 
 ### Swiper Options
 

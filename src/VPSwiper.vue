@@ -30,8 +30,9 @@ const props = defineProps({
   padStart: { type: Number, default: 1 },
   altTextPrefix: { type: String, default: 'Loading' },
   buttonText: { type: String, default: 'View in Fullscreen' },
+  marginTop: { type: String, default: '10px' },
+  marginBottom: { type: String, default: '10px' },
   height: { type: String, default: '' },
-  marginTop: { type: String, default: '' },
 
   slidesPerView: { type: Number, default: 1 },
   spaceBetween: { type: [Number], default: 0 },
@@ -64,6 +65,7 @@ const requestFullscreen = () => {
 
 const swiperStyle = {}
 if (props.height) swiperStyle.height = props.height
+if (props.marginBottom) swiperStyle.marginBottom = props.marginBottom
 </script>
 
 <style scoped>
