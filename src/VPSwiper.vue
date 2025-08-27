@@ -26,13 +26,16 @@ import 'swiper/css/effect-flip'
 const props = defineProps({
   baseUrl: { type: String, required: true },
   numberOfSlides: { type: Number, required: true },
-  altTextPrefix: { type: String, default: 'Loading' },
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
-  height: { type: String, default: '496px' },
+  altTextPrefix: { type: String, default: 'Loading' },
   buttonText: { type: String, default: 'View in Fullscreen' },
+  marginTop: { type: String, default: '10px' },
+  marginBottom: { type: String, default: '10px' },
+  height: { type: String, default: '' },
 
   slidesPerView: { type: Number, default: 1 },
+  spaceBetween: { type: [Number], default: 0 },
   breakpoints: { type: Object, default: () => ({}) },
   pagination: { type: Object, default: () => ({}) },
   lazyPreloadPrevNext: { type: Number, default: 2 },
@@ -59,22 +62,30 @@ const requestFullscreen = () => {
   // noinspection JSUnresolvedReference
   swiperEl?.value?.$el?.requestFullscreen?.()
 }
+
+const swiperStyle = {}
+if (props.marginBottom) swiperStyle.marginBottom = props.marginBottom
+if (props.height) swiperStyle.height = props.height
 </script>
 
-<style>
-:root {
+<style scoped>
+.swiper {
   --swiper-pagination-fraction-color: var(--vp-c-purple-1);
+  --swiper-pagination-color: var(--vp-c-purple-1);
   --swiper-navigation-color: var(--vp-c-purple-1);
   --swiper-navigation-sides-offset: 4px;
-}
-
-.swiper {
   background-color: var(--vp-code-block-bg);
   border-radius: 8px;
 }
 
-.swiper img {
-  width: 100%;
+/*noinspection CssUnusedSymbol*/
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
   height: 100%;
   object-fit: contain;
 }
@@ -88,7 +99,11 @@ const requestFullscreen = () => {
 </style>
 
 <template>
-  <button @click="requestFullscreen" class="inline-button">
+  <button
+    @click="requestFullscreen"
+    class="inline-button"
+    :style="props.marginTop ? { marginTop: props.marginTop } : {}"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -114,7 +129,7 @@ const requestFullscreen = () => {
     <Swiper
       ref="swiperEl"
       class="swiper"
-      :style="{ height: props.height }"
+      :style="swiperStyle"
       :modules="[
         Keyboard,
         Mousewheel,
@@ -126,6 +141,7 @@ const requestFullscreen = () => {
         EffectFlip,
       ]"
       :slides-per-view="props.slidesPerView"
+      :space-between="props.spaceBetween"
       :breakpoints="props.breakpoints"
       :pagination="props.pagination"
       :keyboard="props.keyboard"

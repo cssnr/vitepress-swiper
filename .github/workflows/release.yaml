@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      id-token: write
       contents: write
+      id-token: write
     environment:
       name: npm
       url: https://www.npmjs.com/package/@cssnr/vitepress-swiper
@@ -68,7 +68,7 @@ jobs:
       - name: "Archive Distribution"
         continue-on-error: true
         run: |
-          zip -r dist.zip dist
+          zip -r dist.zip dist package.json README.md LICENSE
 
       - name: "Upload to Release"
         if: ${{ github.event_name == 'release' }}
