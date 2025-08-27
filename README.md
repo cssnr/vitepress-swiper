@@ -159,8 +159,8 @@ You can add any [additional options](#Options). Example:
   :start-at="8"
   :pad-start="2"
   file-ext="png"
-  :pagination="{ type: 'fraction' }"
-  :mousewheel="false"
+  :pagination="{ clickable: true }"
+  :grab-cursor="false"
   effect="fade"
 />
 ```
