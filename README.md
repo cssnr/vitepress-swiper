@@ -219,10 +219,10 @@ Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 | [:grab-cursor](https://swiperjs.com/swiper-api#param-grabCursor)                 | `true`  | Boolean | Enable grab cursor on hover         |
 | [:loop](https://swiperjs.com/swiper-api#param-loop)                              | `true`  | Boolean | Enable continuous loop              |
 | [effect](https://swiperjs.com/swiper-api#param-effect)                           | `slide` | String  | `coverflow`, `cube`, `fade`, `flip` |
-| [:coverflow-effect](https://swiperjs.com/swiper-api#coverflow-effect-parameters) | `null`  | Object  | EffectCoverflow parameters          |
-| [:cube-effect](https://swiperjs.com/swiper-api#cube-effect-parameters)           | `null`  | Object  | EffectCube parameters               |
-| [:fade-effect](https://swiperjs.com/swiper-api#fade-effect-parameters)           | `null`  | Object  | EffectFade parameters               |
-| [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters)           | `null`  | Object  | EffectFlip parameters               |
+| [:coverflow-effect](https://swiperjs.com/swiper-api#coverflow-effect-parameters) |  `{ }`  | Object  | EffectCoverflow parameters          |
+| [:cube-effect](https://swiperjs.com/swiper-api#cube-effect-parameters)           |  `{ }`  | Object  | EffectCube parameters               |
+| [:fade-effect](https://swiperjs.com/swiper-api#fade-effect-parameters)           |  `{ }`  | Object  | EffectFade parameters               |
+| [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters)           |  `{ }`  | Object  | EffectFlip parameters               |
 
 > [!TIP]  
 > Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).

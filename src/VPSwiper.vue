@@ -46,10 +46,10 @@ const props = defineProps({
   grabCursor: { type: Boolean, default: true },
   loop: { type: Boolean, default: true },
   effect: { type: String, default: 'slide' },
-  coverflowEffect: { type: Object, default: null },
-  cubeEffect: { type: Object, default: null },
-  fadeEffect: { type: Object, default: null },
-  flipEffect: { type: Object, default: null },
+  coverflowEffect: { type: Object, default: () => ({}) },
+  cubeEffect: { type: Object, default: () => ({}) },
+  fadeEffect: { type: Object, default: () => ({}) },
+  flipEffect: { type: Object, default: () => ({}) },
 })
 
 // Modules
