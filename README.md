@@ -110,7 +110,23 @@ To generate from a list of `:slides` add them in this format.
 />
 ```
 
-You can add any [additional options](#Options).
+You can add any [additional options](#Options). Example:
+
+```html
+<VPSwiper
+  :slides="[
+    'https://example.com/path/1.jpg',
+    'https://example.com/path/2.jpg',
+    'https://example.com/path/3.jpg',
+  ]"
+  :pagination="{ type: 'fraction' }"
+  :mousewheel="false"
+  button-text="Fullscreen"
+  margin-top="30px"
+  effect="coverflow"
+  :coverflow-effect="{ slideShadows: false }"
+/>
+```
 
 ### Dynamic URL Generation
 
@@ -128,16 +144,19 @@ Therefore, to generate 3 slides you would set.
 
 This will generate the following slide URLs:
 
-- `https://example.com/path/1.jpg`
-- `https://example.com/path/2.jpg`
-- `https://example.com/path/3.jpg`
+```text
+https://example.com/path/1.jpg
+https://example.com/path/2.jpg
+https://example.com/path/3.jpg
+```
 
-**Example passing additional parameters:**
+You can add any [additional options](#Options). Example:
 
 ```html
 <VPSwiper
   base-url="https://example.com/path"
   :number-of-slides="18"
+  :pad-start="2"
   file-ext="png"
   :pagination="{ type: 'fraction' }"
   :mousewheel="false"
@@ -159,20 +178,23 @@ _Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
-You must provide either a `:slides` list or a `base-url` + `:number-of-slides`.
+You must provide either a `:slides` list **¹** or a `base-url` + `:number-of-slides` **²**.
 
-| Property&nbsp;Name |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
-| :----------------- | :------------------: | :----: | :----------------------------- |
-| **:slides**        |    or `base-url`     | Array  | Base URL for image sources     |
-| **base-url**       |     or `:slides`     | String | Base URL for image sources     |
-| :number-of-slides  |         `1`          | Number | Number of slides to generate   |
-| file-ext           |        `jpg`         | String | File extension url generation  |
-| :pad-start         |         `1`          | Number | Pad image names with `0`'s     |
-| alt-text-prefix    |      `Loading`       | String | Prefix for `alt` attributes    |
-| button-text        | `View in Fullscreen` | String | Text for fullscreen button     |
-| margin-top         |        `10px`        | String | CSS marginTop                  |
-| margin-bottom      |        `10px`        | String | CSS marginBottom               |
-| height             |         ` `          | String | CSS height (default: auto)     |
+| Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
+| :---------------------- | :------------------: | :----: | :----------------------------- |
+| **:slides** **¹**       |    or `base-url`     | Array  | Base URL for image sources     |
+| **base-url** **²**      |     or `:slides`     | String | Base URL for image sources     |
+| :number-of-slides **²** |         `1`          | Number | Number of slides to generate   |
+| file-ext **²**          |        `jpg`         | String | File extension url generation  |
+| :pad-start **²**        |         `1`          | Number | Pad image names with `0`'s     |
+| alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
+| button-text             | `View in Fullscreen` | String | Text for fullscreen button     |
+| margin-top              |        `10px`        | String | CSS marginTop                  |
+| margin-bottom           |        `10px`        | String | CSS marginBottom               |
+| height                  |         ` `          | String | CSS height (default: auto)     |
+
+> **¹** Only used with `slides`
+> **²** Only used with `base-url`
 
 ### Swiper Options
 
