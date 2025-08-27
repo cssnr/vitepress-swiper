@@ -112,7 +112,7 @@ To generate from a list of `:slides` add them in this format.
 
 You can add any [additional options](#Options). Example:
 
-```html
+```vue
 <VPSwiper
   :slides="[
     'https://example.com/path/1.jpg',
@@ -152,7 +152,7 @@ https://example.com/path/3.jpg
 
 You can add any [additional options](#Options). Example:
 
-```html
+```vue
 <VPSwiper
   base-url="https://example.com/path"
   :number-of-slides="18"
@@ -165,20 +165,18 @@ You can add any [additional options](#Options). Example:
 />
 ```
 
-> [!TIP]  
-> If you want to show thumbnails or anything else, please
-> [request a feature](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
-
 ## Options
 
-The options are broken down into 2 sections.
-The [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
+The [Plugin Options](#plugin-options) are for slide generation and [Swiper Options](#swiper-options)
+are 1:1 with [Swiper](https://swiperjs.com/swiper-api#parameters).
 
 _Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
-You must provide either a `:slides` list **¹** or a `base-url` + `:number-of-slides` **²**.
+> [!NOTE]
+
+You must provide a `:slides` **¹** list or `base-url` **²** but **not both**.
 
 | Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
 | :---------------------- | :------------------: | :----: | :----------------------------- |
@@ -193,7 +191,7 @@ You must provide either a `:slides` list **¹** or a `base-url` + `:number-of-sl
 | margin-bottom           |        `10px`        | String | CSS marginBottom               |
 | height                  |         ` `          | String | CSS height (default: auto)     |
 
-> **¹** Only used with `slides`
+> **¹** Only used with `slides`  
 > **²** Only used with `base-url`
 
 ### Swiper Options
