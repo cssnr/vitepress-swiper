@@ -183,8 +183,7 @@ _Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
-> [!NOTE]  
-> You must provide a `:slides` **¹** list or `base-url` **²** but **not both**.
+You must provide a **¹** `:slides` list or **²** `base-url` but **not both**.
 
 | Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
 | :---------------------- | :------------------: | :----: | :----------------------------- |
