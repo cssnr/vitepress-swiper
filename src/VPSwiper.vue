@@ -1,5 +1,4 @@
 <script setup>
-// noinspection NpmUsedModulesInstalled
 import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import {
@@ -24,8 +23,10 @@ import 'swiper/css/effect-fade'
 import 'swiper/css/effect-flip'
 
 const props = defineProps({
-  baseUrl: { type: String, required: true },
-  numberOfSlides: { type: Number, required: true },
+  slides: { type: Array, default: null },
+  baseUrl: { type: String, default: null },
+  numberOfSlides: { type: Number, default: 1 },
+  startAt: { type: Number, default: 1 },
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
   altTextPrefix: { type: String, default: 'Loading' },
@@ -35,10 +36,10 @@ const props = defineProps({
   height: { type: String, default: '' },
 
   slidesPerView: { type: Number, default: 1 },
-  spaceBetween: { type: [Number], default: 0 },
-  breakpoints: { type: Object, default: () => ({}) },
-  pagination: { type: Object, default: () => ({}) },
-  lazyPreloadPrevNext: { type: Number, default: 2 },
+  spaceBetween: { type: Number, default: 0 },
+  lazyPreloadPrevNext: { type: Number, default: 1 },
+  breakpoints: { type: Object, default: null },
+  pagination: { type: [Object, Boolean], default: true },
   keyboard: { type: Boolean, default: true },
   mousewheel: { type: Boolean, default: true },
   navigation: { type: Boolean, default: true },
@@ -51,24 +52,54 @@ const props = defineProps({
   flipEffect: { type: Object, default: () => ({}) },
 })
 
-const baseUrl = props.baseUrl.replace(/\/$/, '')
-const getImageSource = (index) => {
-  const fileName = String(index).padStart(props.padStart, '0')
-  return `${baseUrl}/${fileName}.${props.fileExt}`
+// Modules
+const swiperModules = [] // NOSONAR
+if (props.keyboard) swiperModules.push(Keyboard)
+if (props.mousewheel) swiperModules.push(Mousewheel)
+if (props.navigation) swiperModules.push(Navigation)
+if (props.pagination) swiperModules.push(Pagination)
+const effects = {
+  coverflow: EffectCoverflow,
+  cube: EffectCube,
+  fade: EffectFade,
+  flip: EffectFlip,
+}
+const effect = props.effect.trim().toLowerCase()
+if (effects[effect]) swiperModules.push(effects[effect])
+
+// Slides
+let swiperSlides = []
+if (props.slides?.length) {
+  swiperSlides = props.slides
+} else if (props.baseUrl) {
+  const baseUrl = props.baseUrl.replace(/\/$/, '')
+  for (let i = props.startAt; i <= props.numberOfSlides; i++) {
+    const fileName = String(i).padStart(props.padStart, '0')
+    swiperSlides.push(`${baseUrl}/${fileName}.${props.fileExt}`)
+  }
 }
 
+// Style
+const swiperStyle = {}
+if (props.marginBottom) swiperStyle.marginBottom = props.marginBottom
+if (props.height) swiperStyle.height = props.height
+
+// Fullscreen
 const swiperEl = ref(null)
 const requestFullscreen = () => {
   // noinspection JSUnresolvedReference
   swiperEl?.value?.$el?.requestFullscreen?.()
 }
-
-const swiperStyle = {}
-if (props.marginBottom) swiperStyle.marginBottom = props.marginBottom
-if (props.height) swiperStyle.height = props.height
 </script>
 
 <style scoped>
+.vp-swiper-button {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .swiper {
   --swiper-pagination-fraction-color: var(--vp-c-purple-1);
   --swiper-pagination-color: var(--vp-c-purple-1);
@@ -89,19 +120,12 @@ if (props.height) swiperStyle.height = props.height
   height: 100%;
   object-fit: contain;
 }
-
-.inline-button {
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 </style>
 
 <template>
   <button
     @click="requestFullscreen"
-    class="inline-button"
+    class="vp-swiper-button"
     :style="props.marginTop ? { marginTop: props.marginTop } : {}"
   >
     <svg
@@ -130,18 +154,10 @@ if (props.height) swiperStyle.height = props.height
       ref="swiperEl"
       class="swiper"
       :style="swiperStyle"
-      :modules="[
-        Keyboard,
-        Mousewheel,
-        Navigation,
-        Pagination,
-        EffectCoverflow,
-        EffectCube,
-        EffectFade,
-        EffectFlip,
-      ]"
+      :modules="swiperModules"
       :slides-per-view="props.slidesPerView"
       :space-between="props.spaceBetween"
+      :lazy-preload-prev-next="props.lazyPreloadPrevNext"
       :breakpoints="props.breakpoints"
       :pagination="props.pagination"
       :keyboard="props.keyboard"
@@ -149,15 +165,14 @@ if (props.height) swiperStyle.height = props.height
       :navigation="props.navigation"
       :grab-cursor="props.grabCursor"
       :loop="props.loop"
-      :lazy-preload-prev-next="props.lazyPreloadPrevNext"
       :effect="props.effect"
       :coverflow-effect="props.coverflowEffect"
       :cube-effect="props.cubeEffect"
       :fade-effect="props.fadeEffect"
       :flip-effect="props.flipEffect"
     >
-      <SwiperSlide v-for="i in props.numberOfSlides" :key="i">
-        <img :src="getImageSource(i)" :alt="`${props.altTextPrefix} ${i}`" loading="lazy" />
+      <SwiperSlide v-for="(url, i) in swiperSlides" :key="i">
+        <img :src="url" :alt="`${props.altTextPrefix} ${i + 1}`" loading="lazy" />
       </SwiperSlide>
     </Swiper>
   </ClientOnly>
