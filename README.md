@@ -155,14 +155,23 @@ You can add any [additional options](#Options). Example:
 ```vue
 <VPSwiper
   base-url="https://example.com/path"
-  :number-of-slides="18"
+  :number-of-slides="4"
+  :start-at="8"
   :pad-start="2"
   file-ext="png"
   :pagination="{ type: 'fraction' }"
   :mousewheel="false"
-  effect="coverflow"
-  :coverflow-effect="{ slideShadows: false }"
+  effect="fade"
 />
+```
+
+This will generate the following slide URLs:
+
+```text
+https://example.com/path/08.png
+https://example.com/path/09.png
+https://example.com/path/10.png
+https://example.com/path/11.png
 ```
 
 ## Options
@@ -174,15 +183,15 @@ _Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
-> [!NOTE]
-
-You must provide a `:slides` **¹** list or `base-url` **²** but **not both**.
+> [!NOTE]  
+> You must provide a `:slides` **¹** list or `base-url` **²** but **not both**.
 
 | Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
 | :---------------------- | :------------------: | :----: | :----------------------------- |
 | **:slides** **¹**       |    or `base-url`     | Array  | Base URL for image sources     |
 | **base-url** **²**      |     or `:slides`     | String | Base URL for image sources     |
 | :number-of-slides **²** |         `1`          | Number | Number of slides to generate   |
+| :start-at **²**         |         `1`          | Number | Number to start genreation     |
 | file-ext **²**          |        `jpg`         | String | File extension url generation  |
 | :pad-start **²**        |         `1`          | Number | Pad image names with `0`'s     |
 | alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |

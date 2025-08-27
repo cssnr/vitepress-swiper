@@ -26,6 +26,7 @@ const props = defineProps({
   slides: { type: Array, default: null },
   baseUrl: { type: String, default: null },
   numberOfSlides: { type: Number, default: 1 },
+  startAt: { type: Number, default: 1 },
   fileExt: { type: String, default: 'jpg' },
   padStart: { type: Number, default: 1 },
   altTextPrefix: { type: String, default: 'Loading' },
@@ -38,7 +39,7 @@ const props = defineProps({
   spaceBetween: { type: Number, default: 0 },
   lazyPreloadPrevNext: { type: Number, default: 1 },
   breakpoints: { type: Object, default: null },
-  pagination: { type: Object, default: true },
+  pagination: { type: [Object, Boolean], default: true },
   keyboard: { type: Boolean, default: true },
   mousewheel: { type: Boolean, default: true },
   navigation: { type: Boolean, default: true },
@@ -66,7 +67,7 @@ if (props.slides?.length) {
   slidesList = props.slides
 } else if (props.baseUrl) {
   const baseUrl = props.baseUrl.replace(/\/$/, '')
-  for (let i = 1; i <= props.numberOfSlides; i++) {
+  for (let i = props.startAt; i <= props.numberOfSlides; i++) {
     const fileName = String(i).padStart(props.padStart, '0')
     slidesList.push(`${baseUrl}/${fileName}.${props.fileExt}`)
   }
