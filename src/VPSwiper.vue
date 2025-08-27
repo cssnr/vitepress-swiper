@@ -64,8 +64,8 @@ const requestFullscreen = () => {
 }
 
 const swiperStyle = {}
-if (props.height) swiperStyle.height = props.height
 if (props.marginBottom) swiperStyle.marginBottom = props.marginBottom
+if (props.height) swiperStyle.height = props.height
 </script>
 
 <style scoped>
