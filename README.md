@@ -115,7 +115,6 @@ Therefore, the above example will generate 2 image links:
   base-url="https://example.com/path"
   :number-of-slides="18"
   file-ext="png"
-  height="400px"
   :pagination="{ type: 'fraction' }"
   :mousewheel="false"
   effect="coverflow"
