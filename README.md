@@ -178,8 +178,7 @@ https://example.com/path/slide-11.png
 
 ## Options
 
-The [Plugin Options](#plugin-options) are for slide generation and [Swiper Options](#swiper-options)
-are 1:1 with [Swiper](https://swiperjs.com/swiper-api#parameters).
+There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
 
 _Note: String parameters do not begin with a `:` but all other types do._
 
@@ -227,7 +226,7 @@ Swiper Parameters: https://swiperjs.com/swiper-api#parameters
 | [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters)           |  `{ }`  | Object  | EffectFlip parameters               |
 
 > [!TIP]  
-> Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
+> If you need more options, please start a [feature request discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Support
 
