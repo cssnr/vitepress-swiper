@@ -74,7 +74,7 @@ if (props.slides?.length) {
   swiperSlides = props.slides
 } else if (props.baseUrl) {
   const baseUrl = props.baseUrl.replace(/\/$/, '')
-  for (let i = props.startAt; i <= props.numberOfSlides; i++) {
+  for (let i = props.startAt; i < props.numberOfSlides + props.startAt; i++) {
     const fileName = String(i).padStart(props.padStart, '0')
     swiperSlides.push(`${baseUrl}/${props.fileNamePrefix}${fileName}${props.fileExt}`)
   }
