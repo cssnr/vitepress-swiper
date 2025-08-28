@@ -193,7 +193,7 @@ You must provide `:slides` or a `base-url` but **not both**.
 | **base-url** **¹**      |    or **:slides**    | String | Base URL for image sources     |
 | :number-of-slides **¹** |         `1`          | Number | Number of slides to generate   |
 | :start-at **¹**         |         `1`          | Number | Number to start genreation     |
-| file-ext **¹**          |        `.jpg`        | String | File extension file names      |
+| file-ext **¹**          |        `.jpg`        | String | File name extension            |
 | :pad-start **¹**        |         `1`          | Number | Pad file names with `0`'s      |
 | file-name-prefix **¹**  |         ` `          | String | Prefix for file names          |
 | alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
