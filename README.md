@@ -158,9 +158,11 @@ Example using [additional options](#options).
   :number-of-slides="4"
   :start-at="8"
   :pad-start="2"
+  file-name-prefix="slide-"
   file-ext=".png"
   :pagination="{ clickable: true }"
   :grab-cursor="false"
+  margin-top="40px"
   effect="fade"
 />
 ```
@@ -168,10 +170,10 @@ Example using [additional options](#options).
 Resulting URL's:
 
 ```text
-https://example.com/path/08.png
-https://example.com/path/09.png
-https://example.com/path/10.png
-https://example.com/path/11.png
+https://example.com/path/slide-08.png
+https://example.com/path/slide-09.png
+https://example.com/path/slide-10.png
+https://example.com/path/slide-11.png
 ```
 
 ## Options
