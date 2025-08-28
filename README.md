@@ -160,7 +160,7 @@ Example using [additional options](#options).
   :number-of-slides="4"
   :start-at="8"
   :pad-start="2"
-  file-ext="png"
+  file-ext=".png"
   :pagination="{ clickable: true }"
   :grab-cursor="false"
   effect="fade"
@@ -193,15 +193,16 @@ You must provide `:slides` or a `base-url` but **not both**.
 | **base-url** **¹**      |    or **:slides**    | String | Base URL for image sources     |
 | :number-of-slides **¹** |         `1`          | Number | Number of slides to generate   |
 | :start-at **¹**         |         `1`          | Number | Number to start genreation     |
-| file-ext **¹**          |        `.jpg`        | String | File extension url generation  |
-| :pad-start **¹**        |         `1`          | Number | Pad image names with `0`'s     |
+| file-ext **¹**          |        `.jpg`        | String | File extension file names      |
+| :pad-start **¹**        |         `1`          | Number | Pad file names with `0`'s      |
+| file-name-prefix **¹**  |         ` `          | String | Prefix for file names          |
 | alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
 | button-text             | `View in Fullscreen` | String | Text for fullscreen button     |
 | margin-top              |        `10px`        | String | CSS marginTop                  |
 | margin-bottom           |        `10px`        | String | CSS marginBottom               |
 | height                  |         ` `          | String | CSS height (default: auto)     |
 
-> **¹** Only used with [Dynamic URL's](dynamic.md)
+> **¹** Only used with [Dynamic URL's](#dynamic-url-generation)
 
 ### Swiper Options
 
