@@ -19,7 +19,10 @@
 - [Options](#Options)
 - [Support](#Support)
 
-A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with Custom Options.
+A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with [Custom Options](#Options).
+
+Provide a list of slide URL's or [dynamically generate URL's](#dynamic-url-generation).
+Customize the look and feel with [options](#Options).
 
 Minimal footprint, only 3 lines of setup code and 1 Markdown tag per gallery.
 
