@@ -134,9 +134,7 @@ This only works if your files are named numerically and ordered sequentially.
 
 This generates numbers for filenames and appends them to the base url as follows:
 
-```text
-base-url / # . file-ext
-```
+- `base-url` + `/` + `file-name-prefix` + `file#` + `file-ext`
 
 Therefore, the following `<VPSwiper>` tag options/parameters.
 
