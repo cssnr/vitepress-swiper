@@ -110,7 +110,7 @@ To generate from a list of `:slides` add them in this format.
 />
 ```
 
-You can add any [additional options](#Options). Example:
+Example using [additional options](#options).
 
 ```vue
 <VPSwiper
@@ -130,19 +130,21 @@ You can add any [additional options](#Options). Example:
 
 ### Dynamic URL Generation
 
+This only works if your files are named numerically and ordered sequentially.
+
 This generates numbers for filenames and appends them to the base url as follows:
 
 ```text
 base-url / # . file-ext
 ```
 
-Therefore, to generate 3 slides you would set.
+Therefore, the following `<VPSwiper>` tag options/parameters.
 
 ```vue
 <VPSwiper base-url="https://example.com/path" :number-of-slides="3" />
 ```
 
-This will generate the following slide URLs:
+Will produce these URL's:
 
 ```text
 https://example.com/path/1.jpg
@@ -150,7 +152,7 @@ https://example.com/path/2.jpg
 https://example.com/path/3.jpg
 ```
 
-You can add any [additional options](#Options). Example:
+Example using [additional options](#options).
 
 ```vue
 <VPSwiper
@@ -165,7 +167,7 @@ You can add any [additional options](#Options). Example:
 />
 ```
 
-This will generate the following slide URLs:
+Resulting URL's:
 
 ```text
 https://example.com/path/08.png
@@ -183,28 +185,27 @@ _Note: String parameters do not begin with a `:` but all other types do._
 
 ### Plugin Options
 
-You must provide a **¹** `:slides` list or **²** `base-url` but **not both**.
+You must provide `:slides` or a `base-url` but **not both**.
 
 | Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
 | :---------------------- | :------------------: | :----: | :----------------------------- |
-| **:slides** **¹**       |    or `base-url`     | Array  | Base URL for image sources     |
-| **base-url** **²**      |     or `:slides`     | String | Base URL for image sources     |
-| :number-of-slides **²** |         `1`          | Number | Number of slides to generate   |
-| :start-at **²**         |         `1`          | Number | Number to start genreation     |
-| file-ext **²**          |        `jpg`         | String | File extension url generation  |
-| :pad-start **²**        |         `1`          | Number | Pad image names with `0`'s     |
+| **:slides**             |   or **base-url**    | Array  | Base URL for image sources     |
+| **base-url** **¹**      |    or **:slides**    | String | Base URL for image sources     |
+| :number-of-slides **¹** |         `1`          | Number | Number of slides to generate   |
+| :start-at **¹**         |         `1`          | Number | Number to start genreation     |
+| file-ext **¹**          |        `jpg`         | String | File extension url generation  |
+| :pad-start **¹**        |         `1`          | Number | Pad image names with `0`'s     |
 | alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
 | button-text             | `View in Fullscreen` | String | Text for fullscreen button     |
 | margin-top              |        `10px`        | String | CSS marginTop                  |
 | margin-bottom           |        `10px`        | String | CSS marginBottom               |
 | height                  |         ` `          | String | CSS height (default: auto)     |
 
-> **¹** Only used with `slides`  
-> **²** Only used with `base-url`
+> **¹** Only used with [Dynamic URL's](dynamic.md)
 
 ### Swiper Options
 
-Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
+Swiper Parameters: https://swiperjs.com/swiper-api#parameters
 
 | Property&nbsp;Name                                                               | Default |  Type   | Description&nbsp;of&nbsp;Value      |
 | :------------------------------------------------------------------------------- | :-----: | :-----: | :---------------------------------- |

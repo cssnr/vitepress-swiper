@@ -27,7 +27,7 @@ const props = defineProps({
   baseUrl: { type: String, default: null },
   numberOfSlides: { type: Number, default: 1 },
   startAt: { type: Number, default: 1 },
-  fileExt: { type: String, default: 'jpg' },
+  fileExt: { type: String, default: '.jpg' },
   padStart: { type: Number, default: 1 },
   altTextPrefix: { type: String, default: 'Loading' },
   buttonText: { type: String, default: 'View in Fullscreen' },
@@ -75,7 +75,7 @@ if (props.slides?.length) {
   const baseUrl = props.baseUrl.replace(/\/$/, '')
   for (let i = props.startAt; i <= props.numberOfSlides; i++) {
     const fileName = String(i).padStart(props.padStart, '0')
-    swiperSlides.push(`${baseUrl}/${fileName}.${props.fileExt}`)
+    swiperSlides.push(`${baseUrl}/${fileName}${props.fileExt}`)
   }
 }
 
