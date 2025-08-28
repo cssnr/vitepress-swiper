@@ -180,7 +180,7 @@ https://example.com/path/slide-11.png
 
 There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
 
-_Note: String parameters do not begin with a `:` but all other types do._
+_Note: String parameters do **not** begin with a `:` but all other types do._
 
 ### Plugin Options
 
