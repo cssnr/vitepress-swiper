@@ -19,9 +19,12 @@
 - [Options](#Options)
 - [Support](#Support)
 
-A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with Custom Options.
+A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with [Custom Options](#Options).
 
-Minimal footprint, only 3 lines of setup code and 1 Markdown tag per gallery.
+Provide a [list](#Usage) of slide URL's or [dynamically generate](#dynamic-url-generation) them.
+Fully customizable with lots of [options](#Options).
+
+Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery.
 
 Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
 
@@ -110,7 +113,7 @@ To generate from a list of `:slides` add them in this format.
 />
 ```
 
-You can add any [additional options](#Options). Example:
+Example using [additional options](#options).
 
 ```vue
 <VPSwiper
@@ -130,19 +133,19 @@ You can add any [additional options](#Options). Example:
 
 ### Dynamic URL Generation
 
+This only works if your files are named numerically and ordered sequentially.
+
 This generates numbers for filenames and appends them to the base url as follows:
 
-```text
-base-url / # . file-ext
-```
+- `base-url` + `/` + `file-name-prefix` + `file#` + `file-ext`
 
-Therefore, to generate 3 slides you would set.
+Therefore, the following `<VPSwiper>` tag options/parameters.
 
 ```vue
 <VPSwiper base-url="https://example.com/path" :number-of-slides="3" />
 ```
 
-This will generate the following slide URLs:
+Will produce these URL's:
 
 ```text
 https://example.com/path/1.jpg
@@ -150,7 +153,7 @@ https://example.com/path/2.jpg
 https://example.com/path/3.jpg
 ```
 
-You can add any [additional options](#Options). Example:
+Example using [additional options](#options).
 
 ```vue
 <VPSwiper
@@ -158,53 +161,54 @@ You can add any [additional options](#Options). Example:
   :number-of-slides="4"
   :start-at="8"
   :pad-start="2"
-  file-ext="png"
+  file-name-prefix="slide-"
+  file-ext=".png"
   :pagination="{ clickable: true }"
   :grab-cursor="false"
+  margin-top="40px"
   effect="fade"
 />
 ```
 
-This will generate the following slide URLs:
+Resulting URL's:
 
 ```text
-https://example.com/path/08.png
-https://example.com/path/09.png
-https://example.com/path/10.png
-https://example.com/path/11.png
+https://example.com/path/slide-08.png
+https://example.com/path/slide-09.png
+https://example.com/path/slide-10.png
+https://example.com/path/slide-11.png
 ```
 
 ## Options
 
-The [Plugin Options](#plugin-options) are for slide generation and [Swiper Options](#swiper-options)
-are 1:1 with [Swiper](https://swiperjs.com/swiper-api#parameters).
+There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
 
-_Note: String parameters do not begin with a `:` but all other types do._
+_Note: String parameters do **not** begin with a `:` but all other types do._
 
 ### Plugin Options
 
-You must provide a **¹** `:slides` list or **²** `base-url` but **not both**.
+You must provide `:slides` or a `base-url` but **not both**.
 
 | Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
 | :---------------------- | :------------------: | :----: | :----------------------------- |
-| **:slides** **¹**       |    or `base-url`     | Array  | Base URL for image sources     |
-| **base-url** **²**      |     or `:slides`     | String | Base URL for image sources     |
-| :number-of-slides **²** |         `1`          | Number | Number of slides to generate   |
-| :start-at **²**         |         `1`          | Number | Number to start genreation     |
-| file-ext **²**          |        `jpg`         | String | File extension url generation  |
-| :pad-start **²**        |         `1`          | Number | Pad image names with `0`'s     |
+| **:slides**             |   or **base-url**    | Array  | Base URL for image sources     |
+| **base-url** **¹**      |    or **:slides**    | String | Base URL for image sources     |
+| :number-of-slides **¹** |         `1`          | Number | Number of slides to generate   |
+| :start-at **¹**         |         `1`          | Number | Number to start genreation     |
+| file-ext **¹**          |        `.jpg`        | String | Extension for file names       |
+| :pad-start **¹**        |         `1`          | Number | Pad file names with `0`'s      |
+| file-name-prefix **¹**  |         ` `          | String | Prefix for file names          |
 | alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
 | button-text             | `View in Fullscreen` | String | Text for fullscreen button     |
 | margin-top              |        `10px`        | String | CSS marginTop                  |
 | margin-bottom           |        `10px`        | String | CSS marginBottom               |
 | height                  |         ` `          | String | CSS height (default: auto)     |
 
-> **¹** Only used with `slides`  
-> **²** Only used with `base-url`
+> **¹** Only used with [Dynamic URL's](#dynamic-url-generation)
 
 ### Swiper Options
 
-Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
+Swiper Parameters: https://swiperjs.com/swiper-api#parameters
 
 | Property&nbsp;Name                                                               | Default |  Type   | Description&nbsp;of&nbsp;Value      |
 | :------------------------------------------------------------------------------- | :-----: | :-----: | :---------------------------------- |
@@ -225,7 +229,7 @@ Swiper Parameters Documentation: https://swiperjs.com/swiper-api#parameters
 | [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters)           |  `{ }`  | Object  | EffectFlip parameters               |
 
 > [!TIP]  
-> Need more options? Start a [Feature Request Discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
+> If you need more options, please start a [feature request discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
 
 ## Support
 
