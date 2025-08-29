@@ -30,6 +30,7 @@ Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Opt
 
 Live Demos:
 
+- https://django-files.github.io/guides/features#screenshots
 - https://zipline-android.cssnr.com/guides/features#screenshots
 
 ## Install
