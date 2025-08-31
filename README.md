@@ -31,7 +31,7 @@ Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery
 
 **Live Demo's and Examples** are [available on the website](https://vitepress-swiper.cssnr.com/examples).
 
-> [!WARNING]  
+> [!IMPORTANT]  
 > For **Up-to-Date** Documentation, please visit the website:  
 > https://vitepress-swiper.cssnr.com/
 
