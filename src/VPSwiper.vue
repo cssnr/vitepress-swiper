@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import {
+  Autoplay,
   Keyboard,
   Mousewheel,
   Navigation,
@@ -13,6 +14,7 @@ import {
 } from 'swiper/modules'
 
 import 'swiper/css'
+import 'swiper/css/autoplay'
 import 'swiper/css/keyboard'
 import 'swiper/css/mousewheel'
 import 'swiper/css/navigation'
@@ -46,6 +48,12 @@ const props = defineProps({
   navigation: { type: Boolean, default: true },
   grabCursor: { type: Boolean, default: true },
   loop: { type: Boolean, default: true },
+  autoplay: { type: [Object, Boolean], default: false },
+  centeredSlides: { type: Boolean, default: false },
+  direction: { type: String, default: 'horizontal' },
+  initialSlide: { type: Number, default: 0 },
+  oneWayMovement: { type: Boolean, default: false },
+  speed: { type: Number, default: 300 },
   effect: { type: String, default: 'slide' },
   coverflowEffect: { type: Object, default: () => ({}) },
   cubeEffect: { type: Object, default: () => ({}) },
@@ -55,6 +63,7 @@ const props = defineProps({
 
 // Modules
 const swiperModules = [] // NOSONAR
+if (props.autoplay) swiperModules.push(Autoplay)
 if (props.keyboard) swiperModules.push(Keyboard)
 if (props.mousewheel) swiperModules.push(Mousewheel)
 if (props.navigation) swiperModules.push(Navigation)
@@ -167,6 +176,12 @@ const requestFullscreen = () => {
       :navigation="props.navigation"
       :grab-cursor="props.grabCursor"
       :loop="props.loop"
+      :autoplay="props.autoplay"
+      :centered-slides="props.centeredSlides"
+      :direction="props.direction"
+      :initial-slide="props.initialSlide"
+      :one-way-movement="props.oneWayMovement"
+      :speed="props.speed"
       :effect="props.effect"
       :coverflow-effect="props.coverflowEffect"
       :cube-effect="props.cubeEffect"

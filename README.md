@@ -213,23 +213,29 @@ You must provide `:slides` or a `base-url` but **not both**.
 
 Swiper Parameters: https://swiperjs.com/swiper-api#parameters
 
-| Property&nbsp;Name                                                               | Default |  Type   | Description&nbsp;of&nbsp;Value      |
-| :------------------------------------------------------------------------------- | :-----: | :-----: | :---------------------------------- |
-| [:slides-per-view](https://swiperjs.com/swiper-api#param-slidesPerView)          |   `1`   | Number  | Number of slides shown per view     |
-| [:space-between](https://swiperjs.com/swiper-api#param-spaceBetween)             |   `0`   | Number  | Space between slides in pixels      |
-| [:lazy-preload-prev-next](https://swiperjs.com/swiper-api#param-spaceBetween)    |   `1`   | Number  | Number of lazy loaded slides        |
-| [:breakpoints](https://swiperjs.com/swiper-api#param-breakpoints)                | `null`  | Object  | Breakpoints parameters              |
-| [:pagination](https://swiperjs.com/swiper-api#pagination-parameters)             | `true`  | Object  | Pagination parameters               |
-| [:keyboard](https://swiperjs.com/swiper-api#param-keyboard)                      | `true`  | Boolean | Enable keyboard navigation          |
-| [:mousewheel](https://swiperjs.com/swiper-api#param-mousewheel)                  | `true`  | Boolean | Enable mouse wheel navigation       |
-| [:navigation](https://swiperjs.com/swiper-api#param-navigation)                  | `true`  | Boolean | Enable side navigation arrows       |
-| [:grab-cursor](https://swiperjs.com/swiper-api#param-grabCursor)                 | `true`  | Boolean | Enable grab cursor on hover         |
-| [:loop](https://swiperjs.com/swiper-api#param-loop)                              | `true`  | Boolean | Enable continuous loop              |
-| [effect](https://swiperjs.com/swiper-api#param-effect)                           | `slide` | String  | `coverflow`, `cube`, `fade`, `flip` |
-| [:coverflow-effect](https://swiperjs.com/swiper-api#coverflow-effect-parameters) |  `{ }`  | Object  | EffectCoverflow parameters          |
-| [:cube-effect](https://swiperjs.com/swiper-api#cube-effect-parameters)           |  `{ }`  | Object  | EffectCube parameters               |
-| [:fade-effect](https://swiperjs.com/swiper-api#fade-effect-parameters)           |  `{ }`  | Object  | EffectFade parameters               |
-| [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters)           |  `{ }`  | Object  | EffectFlip parameters               |
+| Property&nbsp;Name                                                               |   Default    |  Type   | Description&nbsp;of&nbsp;Value      |
+| :------------------------------------------------------------------------------- | :----------: | :-----: | :---------------------------------- |
+| [:slides-per-view](https://swiperjs.com/swiper-api#param-slidesPerView)          |     `1`      | Number  | Number of slides shown per view     |
+| [:space-between](https://swiperjs.com/swiper-api#param-spaceBetween)             |     `0`      | Number  | Space between slides in pixels      |
+| [:lazy-preload-prev-next](https://swiperjs.com/swiper-api#param-spaceBetween)    |     `1`      | Number  | Number of lazy loaded slides        |
+| [:breakpoints](https://swiperjs.com/swiper-api#param-breakpoints)                |    `null`    | Object  | Breakpoints parameters              |
+| [:pagination](https://swiperjs.com/swiper-api#pagination-parameters)             |    `true`    | Object  | Pagination parameters               |
+| [:keyboard](https://swiperjs.com/swiper-api#param-keyboard)                      |    `true`    | Boolean | Enable keyboard navigation          |
+| [:mousewheel](https://swiperjs.com/swiper-api#param-mousewheel)                  |    `true`    | Boolean | Enable mouse wheel navigation       |
+| [:navigation](https://swiperjs.com/swiper-api#param-navigation)                  |    `true`    | Boolean | Enable side navigation arrows       |
+| [:grab-cursor](https://swiperjs.com/swiper-api#param-grabCursor)                 |    `true`    | Boolean | Enable grab cursor on hover         |
+| [:loop](https://swiperjs.com/swiper-api#param-loop)                              |    `true`    | Boolean | Enable continuous loop              |
+| [:autoplay](https://swiperjs.com/swiper-api#param-autoplay)                      |   `false`    | Object  | Can be `true` or parameters         |
+| [:centered-slides](https://swiperjs.com/swiper-api#param-centeredSlides)         |   `false`    | Boolean | Center slides vs left aligned       |
+| [:direction](https://swiperjs.com/swiper-api#param-direction)                    | `horizontal` | String  | If `vertical` must set `height`     |
+| [:initial-slide](https://swiperjs.com/swiper-api#param-initialSlide)             |     `0`      | Number  | Initial slide index                 |
+| [:one-way-movement](https://swiperjs.com/swiper-api#param-oneWayMovement)        |   `false`    | Boolean | Only allow swiping forward          |
+| [:speed](https://swiperjs.com/swiper-api#param-speed)                            |    `300`     | Number  | Slide transition speed in ms        |
+| [effect](https://swiperjs.com/swiper-api#param-effect)                           |   `slide`    | String  | `coverflow`, `cube`, `fade`, `flip` |
+| [:coverflow-effect](https://swiperjs.com/swiper-api#coverflow-effect-parameters) |    `{ }`     | Object  | EffectCoverflow parameters          |
+| [:cube-effect](https://swiperjs.com/swiper-api#cube-effect-parameters)           |    `{ }`     | Object  | EffectCube parameters               |
+| [:fade-effect](https://swiperjs.com/swiper-api#fade-effect-parameters)           |    `{ }`     | Object  | EffectFade parameters               |
+| [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters)           |    `{ }`     | Object  | EffectFlip parameters               |
 
 > [!TIP]  
 > If you need more options, please start a [feature request discussion](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests).
