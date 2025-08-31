@@ -25,16 +25,15 @@
 A [VitePress](https://vitepress.dev/) Plugin to Easily add a [SwiperJS](https://swiperjs.com/) Photo Gallery or Image Slideshow with Custom [Options](#Options).
 
 Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
-
 Provide a [list](#Usage) of slide URL's or [dynamically generate](#dynamic-url-generation) them.
 
 Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery.
 
-> [!TIP]  
-> See Live Demo's, Examples, and Up-to-Date Docs on the website:  
-> https://vitepress-swiper.cssnr.com/
+> View the [Live Demo's and Examples](https://vitepress-swiper.cssnr.com/examples)
 
 ## Install
+
+> View the [Installation Guide](https://vitepress-swiper.cssnr.com/guides/get-started#install)
 
 There are 2 ways to install this plugin based on preference.
 
@@ -97,6 +96,8 @@ export default {
 ```
 
 ## Usage
+
+> View the [Usage Guide](https://vitepress-swiper.cssnr.com/guides/get-started#usage)
 
 To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to appear.
 
@@ -188,6 +189,8 @@ https://example.com/path/slide-11.png
 ```
 
 ## Options
+
+> View the [Options Documentation](https://vitepress-swiper.cssnr.com/guides/options)
 
 There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
 
