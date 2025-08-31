@@ -198,7 +198,7 @@ There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options
 
 _Note: String parameters do **not** begin with a `:` but all other types do._
 
-> View the [Options Documentation](https://vitepress-swiper.cssnr.com/guides/options)
+> View the [Options Guide](https://vitepress-swiper.cssnr.com/guides/options).
 
 ### Plugin Options
 
