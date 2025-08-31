@@ -1,7 +1,10 @@
 [![NPM Downloads](https://img.shields.io/npm/dw/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![NPM Version](https://img.shields.io/npm/v/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
+[![GitHub Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=npm&label=deploy)](https://github.com/cssnr/vitepress-swiper/deployments)
+[![Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=cachet&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
+[![Docs Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper-docs?logo=vitepress&logoColor=white&label=docs)](https://vitepress-swiper.cssnr.com/)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
 [![NPM Bundle Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=npm)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper)
@@ -19,19 +22,18 @@
 - [Options](#Options)
 - [Support](#Support)
 
-A [Swiper](https://swiperjs.com/) Plugin for [VitePress](https://vitepress.dev/) to Easily add an Image Gallery or Photo Slideshow with [Custom Options](#Options).
+A [VitePress](https://vitepress.dev/) Plugin to Easily add a [SwiperJS](https://swiperjs.com/) Photo Gallery or Image Slideshow with Custom [Options](#Options).
+
+Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
 
 Provide a [list](#Usage) of slide URL's or [dynamically generate](#dynamic-url-generation) them.
 Fully customizable with lots of [options](#Options).
 
 Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery.
 
-Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
-
-Live Demos:
-
-- https://django-files.github.io/guides/features#screenshots
-- https://zipline-android.cssnr.com/guides/features#screenshots
+> [!TIP]  
+> View examples and up-to-date docs on the website:  
+> https://vitepress-swiper.cssnr.com/
 
 ## Install
 

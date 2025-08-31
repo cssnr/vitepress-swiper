@@ -115,6 +115,7 @@ const requestFullscreen = () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 60px;
 }
 
 .swiper-slide img {
@@ -174,6 +175,7 @@ const requestFullscreen = () => {
     >
       <SwiperSlide v-for="(url, i) in swiperSlides" :key="i">
         <img :src="url" :alt="`${props.altTextPrefix} ${i + 1}`" loading="lazy" />
+        <div class="swiper-lazy-preloader"></div>
       </SwiperSlide>
     </Swiper>
   </ClientOnly>

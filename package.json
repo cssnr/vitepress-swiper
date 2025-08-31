@@ -2,8 +2,8 @@
   "name": "@cssnr/vitepress-swiper",
   "version": "0.0.1",
   "license": "GPL-3.0-only",
-  "description": "A VitePress Swiper Plugin to Easily add an Image Gallery or Photo Slideshow with Custom Options.",
-  "homepage": "https://github.com/cssnr/vitepress-swiper",
+  "description": "A VitePress Plugin to Easily add a SwiperJS Photo Gallery or Image Slideshow with Custom Options.",
+  "homepage": "https://vitepress-swiper.cssnr.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cssnr/vitepress-swiper.git"
@@ -45,7 +45,7 @@
     "@vitejs/plugin-vue": "^6.0.1",
     "prettier": "^3.6.2",
     "vite": "^7.1.3",
-    "vue": "^3.5.19"
+    "vue": "^3.5.20"
   },
   "exports": {
     ".": {

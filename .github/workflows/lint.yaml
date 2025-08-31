@@ -27,7 +27,7 @@ jobs:
       - name: "Install"
         id: install
         run: |
-          npm install
+          npm ci
 
       #- name: "ESLint"
       #  if: ${{ !cancelled() }}
