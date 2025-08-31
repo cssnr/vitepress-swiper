@@ -29,8 +29,11 @@ Provide a [list](#Usage) of slide URL's or [dynamically generate](#dynamic-url-g
 
 Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery.
 
-View [Live Demo's and Examples](https://vitepress-swiper.cssnr.com/examples)
-on the website: https://vitepress-swiper.cssnr.com/
+**Live Demo's and Examples are [available on the website](https://vitepress-swiper.cssnr.com/examples).**
+
+> [!WARNING]  
+> For Up-to-Date Documentation, please visit the website:  
+> https://vitepress-swiper.cssnr.com/
 
 ## Install
 
