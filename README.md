@@ -27,12 +27,11 @@ A [VitePress](https://vitepress.dev/) Plugin to Easily add a [SwiperJS](https://
 Easy to [install](#Install) and [use](#Usage) with lots of custom [options](#Options).
 
 Provide a [list](#Usage) of slide URL's or [dynamically generate](#dynamic-url-generation) them.
-Fully customizable with lots of [options](#Options).
 
 Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery.
 
 > [!TIP]  
-> View examples and up-to-date docs on the website:  
+> See Live Demo's, Examples, and Up-to-Date Docs on the website:  
 > https://vitepress-swiper.cssnr.com/
 
 ## Install
@@ -45,6 +44,8 @@ There are 2 ways to install this plugin based on preference.
 ### As a Dependency
 
 NPM Package: https://www.npmjs.com/package/@cssnr/vitepress-swiper
+
+Install directly into your VitePress with:
 
 ```shell
 npm i @cssnr/vitepress-swiper
@@ -133,6 +134,10 @@ Example using [additional options](#options).
   :coverflow-effect="{ slideShadows: false }"
 />
 ```
+
+> [!TIP]  
+> See Live Demo's, Examples, and Up-to-Date Docs on the website:  
+> https://vitepress-swiper.cssnr.com/
 
 ### Dynamic URL Generation
 
