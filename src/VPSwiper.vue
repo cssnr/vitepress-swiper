@@ -102,37 +102,6 @@ const requestFullscreen = () => {
 }
 </script>
 
-<style scoped>
-.vp-swiper-button {
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.swiper {
-  --swiper-pagination-fraction-color: var(--vp-c-purple-1);
-  --swiper-pagination-color: var(--vp-c-purple-1);
-  --swiper-navigation-color: var(--vp-c-purple-1);
-  --swiper-navigation-sides-offset: 4px;
-  background-color: var(--vp-code-block-bg);
-  border-radius: 8px;
-}
-
-/*noinspection CssUnusedSymbol*/
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60px;
-}
-
-.swiper-slide img {
-  height: 100%;
-  object-fit: contain;
-}
-</style>
-
 <template>
   <button
     @click="requestFullscreen"
@@ -195,3 +164,35 @@ const requestFullscreen = () => {
     </Swiper>
   </ClientOnly>
 </template>
+
+<style scoped>
+.vp-swiper-button {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.swiper {
+  --swiper-pagination-fraction-color: var(--vp-c-purple-1);
+  --swiper-pagination-color: var(--vp-c-purple-1);
+  --swiper-navigation-color: var(--vp-c-purple-1);
+  --swiper-navigation-sides-offset: 4px;
+  background-color: var(--vp-code-block-bg);
+  border-radius: 8px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  height: auto;
+}
+
+.swiper-slide img {
+  height: 100%;
+  object-fit: contain;
+}
+</style>
