@@ -270,7 +270,7 @@ If you are experiencing an issue/bug or getting unexpected results:
 
 # Contributing
 
-For instructions on creating a PR, see the [CONTRIBUTING.md](https://github.com/cssnr/.github/blob/master/.github/CONTRIBUTING.md).
+For instructions on creating a PR, see the [CONTRIBUTING.md](#contributing-ov-file).
 
 Please consider making a donation to support the development of this project
 and [additional](https://cssnr.com/) open source projects.
