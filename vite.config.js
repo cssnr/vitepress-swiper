@@ -12,11 +12,13 @@ export default defineConfig({
         },
         cssCodeSplit: true,
         rollupOptions: {
-            external: ['vue', 'vitepress'],
+            external: ['vue', 'swiper', 'swiper/vue', 'swiper/modules'],
             output: {
                 globals: {
                     vue: 'Vue',
-                    vitepress: 'VitePress',
+                    swiper: 'Swiper',
+                    'swiper/vue': 'Swiper',
+                    'swiper/modules': 'Swiper',
                 },
             },
         },

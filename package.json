@@ -16,6 +16,7 @@
     "url": "https://ko-fi.com/cssnr"
   },
   "keywords": [
+    "vitepress-plugin",
     "vitepress",
     "plugin",
     "swiper",
@@ -35,12 +36,11 @@
     "prepare": "npm run build",
     "prettier": "npx prettier --check ."
   },
-  "dependencies": {
-    "swiper": "^12.0.1"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "vitepress": "*",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "swiper": ">=11.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
