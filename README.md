@@ -70,6 +70,9 @@ export default {
 }
 ```
 
+_Note: If you use the [VitePress Badge](https://vitepress.dev/reference/default-theme-badge#badge)
+see the [Setup Guide](https://vitepress-swiper.cssnr.com/guides/get-started#setup) for more information._
+
 Proceed to [Usage](#Usage).
 
 ### From the Source
