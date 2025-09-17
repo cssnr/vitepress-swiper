@@ -7,8 +7,8 @@
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![Docs Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper-docs?logo=vitepress&logoColor=white&label=docs)](https://vitepress-swiper.cssnr.com/)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper)
-[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/vitepress-swiper?logo=htmx&logoColor=white)](https://github.com/cssnr/vitepress-swiper)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper?tab=readme-ov-file#readme)
+[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/vitepress-swiper?logo=htmx&logoColor=white)](https://github.com/cssnr/vitepress-swiper/blob/master/src/VPSwiper.vue)
 [![GitHub Discussions](https://img.shields.io/github/discussions/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/discussions)
 [![GitHub Repo Stars](https://img.shields.io/github/stars/cssnr/vitepress-swiper?style=flat&logo=github)](https://github.com/cssnr/vitepress-swiper/stargazers)
 [![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=github&label=org%20stars)](https://cssnr.github.io/)
@@ -69,6 +69,9 @@ export default {
   },
 }
 ```
+
+_Note: If you use the [VitePress Badge](https://vitepress.dev/reference/default-theme-badge#badge)
+see the [Setup Guide](https://vitepress-swiper.cssnr.com/guides/get-started#setup) for more information._
 
 Proceed to [Usage](#Usage).
 
@@ -204,20 +207,21 @@ _Note: String parameters do **not** begin with a `:` but all other types do._
 
 You must provide `:slides` or a `base-url` but **not both**.
 
-| Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
-| :---------------------- | :------------------: | :----: | :----------------------------- |
-| **:slides**             |   or **base-url**    | Array  | Base URL for image sources     |
-| **base-url** **¹**      |    or **:slides**    | String | Base URL for image sources     |
-| :number-of-slides **¹** |         `1`          | Number | Number of slides to generate   |
-| :start-at **¹**         |         `1`          | Number | Number to start genreation     |
-| file-ext **¹**          |        `.jpg`        | String | Extension for file names       |
-| :pad-start **¹**        |         `1`          | Number | Pad file names with `0`'s      |
-| file-name-prefix **¹**  |         ` `          | String | Prefix for file names          |
-| alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
-| button-text             | `View in Fullscreen` | String | Text for fullscreen button     |
-| margin-top              |        `10px`        | String | CSS marginTop                  |
-| margin-bottom           |        `10px`        | String | CSS marginBottom               |
-| height                  |         ` `          | String | CSS height (default: auto)     |
+| Property&nbsp;Name      |  Default&nbsp;Value  |  Type   | Description&nbsp;of&nbsp;Value                                                        |
+| :---------------------- | :------------------: | :-----: | :------------------------------------------------------------------------------------ |
+| **:slides**             |   or **base-url**    |  Array  | Base URL for image sources                                                            |
+| **base-url** **¹**      |    or **:slides**    | String  | Base URL for image sources                                                            |
+| :number-of-slides **¹** |         `1`          | Number  | Number of slides to generate                                                          |
+| :start-at **¹**         |         `1`          | Number  | Number to start generation                                                            |
+| file-ext **¹**          |        `.jpg`        | String  | Extension for file names                                                              |
+| :pad-start **¹**        |         `1`          | Number  | Pad file names with `0`'s                                                             |
+| file-name-prefix **¹**  |         ` `          | String  | Prefix for file names                                                                 |
+| alt-text-prefix         |      `Loading`       | String  | Prefix for `alt` attributes                                                           |
+| button-text             | `View in Fullscreen` | String  | Text for fullscreen button                                                            |
+| no-fullscreen           |       `false`        | Boolean | Disable fullscreen button                                                             |
+| height                  |        `null`        | String  | [CSS height](https://developer.mozilla.org/en-US/docs/Web/CSS/height) (default: auto) |
+| margin                  |        `null`        | String  | [CSS margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)                 |
+| border-radius           |        `8px`         | String  | [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)   |
 
 > **¹** Only used with [Dynamic URL's](#dynamic-url-generation)
 

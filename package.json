@@ -38,9 +38,9 @@
   },
   "dependencies": {},
   "peerDependencies": {
+    "swiper": ">=11.0.0",
     "vitepress": "*",
-    "vue": "^3.0.0",
-    "swiper": ">=11.0.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",

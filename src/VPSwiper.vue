@@ -34,9 +34,10 @@ const props = defineProps({
   fileNamePrefix: { type: String, default: '' },
   altTextPrefix: { type: String, default: 'Loading' },
   buttonText: { type: String, default: 'View in Fullscreen' },
-  marginTop: { type: String, default: '10px' },
-  marginBottom: { type: String, default: '10px' },
-  height: { type: String, default: '' },
+  noFullscreen: { type: Boolean, default: false },
+  height: { type: String, default: null },
+  margin: { type: String, default: null },
+  borderRadius: { type: String, default: '8px' },
 
   slidesPerView: { type: Number, default: 1 },
   spaceBetween: { type: Number, default: 0 },
@@ -89,11 +90,6 @@ if (props.slides?.length) {
   }
 }
 
-// Style
-const swiperStyle = {}
-if (props.marginBottom) swiperStyle.marginBottom = props.marginBottom
-if (props.height) swiperStyle.height = props.height
-
 // Fullscreen
 const swiperEl = ref(null)
 const requestFullscreen = () => {
@@ -103,69 +99,69 @@ const requestFullscreen = () => {
 </script>
 
 <template>
-  <button
-    @click="requestFullscreen"
-    class="vp-swiper-button"
-    :style="props.marginTop ? { marginTop: props.marginTop } : {}"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-fullscreen-icon lucide-fullscreen"
-    >
-      <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-      <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-      <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-      <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-      <rect width="10" height="8" x="7" y="8" rx="1" />
-    </svg>
-    <span>{{ props.buttonText }}</span>
-  </button>
+  <div class="vp-swiper-wrapper">
+    <button v-if="!props.noFullscreen" @click="requestFullscreen" class="vp-swiper-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-fullscreen-icon lucide-fullscreen"
+      >
+        <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+        <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+        <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+        <rect width="10" height="8" x="7" y="8" rx="1" />
+      </svg>
+      <span>{{ props.buttonText }}</span>
+    </button>
 
-  <ClientOnly>
-    <Swiper
-      ref="swiperEl"
-      class="swiper"
-      :style="swiperStyle"
-      :modules="swiperModules"
-      :slides-per-view="props.slidesPerView"
-      :space-between="props.spaceBetween"
-      :lazy-preload-prev-next="props.lazyPreloadPrevNext"
-      :breakpoints="props.breakpoints"
-      :pagination="props.pagination"
-      :keyboard="props.keyboard"
-      :mousewheel="props.mousewheel"
-      :navigation="props.navigation"
-      :grab-cursor="props.grabCursor"
-      :loop="props.loop"
-      :autoplay="props.autoplay"
-      :centered-slides="props.centeredSlides"
-      :direction="props.direction"
-      :initial-slide="props.initialSlide"
-      :one-way-movement="props.oneWayMovement"
-      :speed="props.speed"
-      :effect="props.effect"
-      :coverflow-effect="props.coverflowEffect"
-      :cube-effect="props.cubeEffect"
-      :fade-effect="props.fadeEffect"
-      :flip-effect="props.flipEffect"
-    >
-      <SwiperSlide v-for="(url, i) in swiperSlides" :key="i">
-        <img :src="url" :alt="`${props.altTextPrefix} ${i + 1}`" loading="lazy" />
-        <div class="swiper-lazy-preloader"></div>
-      </SwiperSlide>
-    </Swiper>
-  </ClientOnly>
+    <ClientOnly>
+      <Swiper
+        ref="swiperEl"
+        class="swiper"
+        :modules="swiperModules"
+        :slides-per-view="props.slidesPerView"
+        :space-between="props.spaceBetween"
+        :lazy-preload-prev-next="props.lazyPreloadPrevNext"
+        :breakpoints="props.breakpoints"
+        :pagination="props.pagination"
+        :keyboard="props.keyboard"
+        :mousewheel="props.mousewheel"
+        :navigation="props.navigation"
+        :grab-cursor="props.grabCursor"
+        :loop="props.loop"
+        :autoplay="props.autoplay"
+        :centered-slides="props.centeredSlides"
+        :direction="props.direction"
+        :initial-slide="props.initialSlide"
+        :one-way-movement="props.oneWayMovement"
+        :speed="props.speed"
+        :effect="props.effect"
+        :coverflow-effect="props.coverflowEffect"
+        :cube-effect="props.cubeEffect"
+        :fade-effect="props.fadeEffect"
+        :flip-effect="props.flipEffect"
+      >
+        <SwiperSlide v-for="(url, i) in swiperSlides" :key="i">
+          <img :src="url" :alt="`${props.altTextPrefix} ${i + 1}`" loading="lazy" />
+          <div class="swiper-lazy-preloader"></div>
+        </SwiperSlide>
+      </Swiper>
+    </ClientOnly>
+  </div>
 </template>
 
 <style scoped>
+.vp-swiper-wrapper {
+  margin: v-bind('props.margin');
+}
 .vp-swiper-button {
   font-weight: bold;
   display: inline-flex;
@@ -174,12 +170,13 @@ const requestFullscreen = () => {
 }
 
 .swiper {
+  height: v-bind('props.height');
   --swiper-pagination-fraction-color: var(--vp-c-purple-1);
   --swiper-pagination-color: var(--vp-c-purple-1);
   --swiper-navigation-color: var(--vp-c-purple-1);
   --swiper-navigation-sides-offset: 4px;
   background-color: var(--vp-code-block-bg);
-  border-radius: 8px;
+  border-radius: v-bind('props.borderRadius');
 }
 
 /*noinspection CssUnusedSymbol*/
