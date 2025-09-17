@@ -2,13 +2,15 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
+const name = 'VPSwiper'
+
 export default defineConfig({
     plugins: [vue()],
     build: {
         lib: {
-            entry: path.resolve(__dirname, 'src/VPSwiper.vue'),
-            name: 'VPSwiper',
-            fileName: (format) => `VPSwiper.${format}.js`,
+            entry: path.resolve(__dirname, `src/${name}.vue`),
+            name,
+            fileName: (format) => `${name}.${format}.js`,
         },
         cssCodeSplit: true,
         rollupOptions: {

@@ -204,20 +204,21 @@ _Note: String parameters do **not** begin with a `:` but all other types do._
 
 You must provide `:slides` or a `base-url` but **not both**.
 
-| Property&nbsp;Name      |  Default&nbsp;Value  |  Type  | Description&nbsp;of&nbsp;Value |
-| :---------------------- | :------------------: | :----: | :----------------------------- |
-| **:slides**             |   or **base-url**    | Array  | Base URL for image sources     |
-| **base-url** **¹**      |    or **:slides**    | String | Base URL for image sources     |
-| :number-of-slides **¹** |         `1`          | Number | Number of slides to generate   |
-| :start-at **¹**         |         `1`          | Number | Number to start genreation     |
-| file-ext **¹**          |        `.jpg`        | String | Extension for file names       |
-| :pad-start **¹**        |         `1`          | Number | Pad file names with `0`'s      |
-| file-name-prefix **¹**  |         ` `          | String | Prefix for file names          |
-| alt-text-prefix         |      `Loading`       | String | Prefix for `alt` attributes    |
-| button-text             | `View in Fullscreen` | String | Text for fullscreen button     |
-| margin-top              |        `10px`        | String | CSS marginTop                  |
-| margin-bottom           |        `10px`        | String | CSS marginBottom               |
-| height                  |         ` `          | String | CSS height (default: auto)     |
+| Property&nbsp;Name      |  Default&nbsp;Value  |  Type   | Description&nbsp;of&nbsp;Value                                                        |
+| :---------------------- | :------------------: | :-----: | :------------------------------------------------------------------------------------ |
+| **:slides**             |   or **base-url**    |  Array  | Base URL for image sources                                                            |
+| **base-url** **¹**      |    or **:slides**    | String  | Base URL for image sources                                                            |
+| :number-of-slides **¹** |         `1`          | Number  | Number of slides to generate                                                          |
+| :start-at **¹**         |         `1`          | Number  | Number to start generation                                                            |
+| file-ext **¹**          |        `.jpg`        | String  | Extension for file names                                                              |
+| :pad-start **¹**        |         `1`          | Number  | Pad file names with `0`'s                                                             |
+| file-name-prefix **¹**  |         ` `          | String  | Prefix for file names                                                                 |
+| alt-text-prefix         |      `Loading`       | String  | Prefix for `alt` attributes                                                           |
+| button-text             | `View in Fullscreen` | String  | Text for fullscreen button                                                            |
+| no-fullscreen           |       `false`        | Boolean | Disable fullscreen button                                                             |
+| height                  |        `null`        | String  | [CSS height](https://developer.mozilla.org/en-US/docs/Web/CSS/height) (default: auto) |
+| margin                  |        `null`        | String  | [CSS margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)                 |
+| border-radius           |        `8px`         | String  | [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)   |
 
 > **¹** Only used with [Dynamic URL's](#dynamic-url-generation)
 
