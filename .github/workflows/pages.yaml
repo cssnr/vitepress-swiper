@@ -1,0 +1,101 @@
+name: "Pages"
+
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "docs/**"
+      - ".github/workflows/pages.yaml"
+  workflow_dispatch:
+
+env:
+  CRAWLER_ID: "b2b42be2-ff7f-45a8-8d84-828f80ae8616"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: "Setup Node 22"
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: "Configure Pages"
+        uses: actions/configure-pages@v5
+
+      - name: "Install Dependencies"
+        run: |
+          npm ci
+
+      - name: "Run Build"
+        run: |
+          npm run get-contributors
+          npm run docs:build
+
+      - name: "Upload Pages Artifact"
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: build
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: docs
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: "Deploy Pages"
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: "Send Deploy Notification"
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+
+  post:
+    name: "Post-Deploy"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: deploy
+
+    steps:
+      - name: "Algolia Crawler"
+        if: ${{ env.CRAWLER_ID != '' }}
+        uses: cssnr/algolia-crawler-action@v1
+        with:
+          crawler_id: ${{ env.CRAWLER_ID }}
+          crawler_user_id: ${{ secrets.CRAWLER_USER_ID }}
+          crawler_api_key: ${{ secrets.CRAWLER_API_KEY }}
+
+      - name: "Send Post-Deploy Notification"
+        if: ${{ failure() }}
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}

@@ -2,10 +2,11 @@
 [![NPM Version](https://img.shields.io/npm/v/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
 [![NPM Bundle Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=npm)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
-[![GitHub Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=github&label=deploy)](https://github.com/cssnr/vitepress-swiper/deployments)
+[![NPM Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=github&label=release)](https://github.com/cssnr/vitepress-swiper/deployments/npm)
+[![Pages Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/docs?logo=github&label=docs)](https://github.com/cssnr/vitepress-swiper/deployments/docs)
 [![Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=cachet&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
 [![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
-[![Docs Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper-docs?logo=vitepress&logoColor=white&label=docs)](https://vitepress-swiper.cssnr.com/)
+[![GitHub Contributors](https://img.shields.io/github/contributors/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/graphs/contributors)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper?tab=readme-ov-file#readme)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/vitepress-swiper?logo=htmx&logoColor=white)](https://github.com/cssnr/vitepress-swiper/blob/master/src/VPSwiper.vue)
@@ -272,12 +273,20 @@ If you are experiencing an issue/bug or getting unexpected results:
 - Chat with us on Discord: https://discord.gg/wXy6m2X8wY
 - Provide General Feedback: [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=VitePress%20Swiper)
 
+### More VitePress Plugins
+
+- [SwiperJS](https://github.com/cssnr/vitepress-swiper) - Photo Gallery
+- [Contributors](https://github.com/cssnr/vitepress-plugin-contributors) - GitHub Contributors
+- [Copy Button](https://github.com/cssnr/vitepress-plugin-copybutton) - Copy Text Button
+
 # Contributing
 
-For instructions on creating a PR, see the [CONTRIBUTING.md](#contributing-ov-file).
+All contributions are welcome including [bug reports](https://github.com/cssnr/vitepress-swiper/issues), [feature requests](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests), or pull requests.
 
-Please consider making a donation to support the development of this project
-and [additional](https://cssnr.com/) open source projects.
+For instructions on creating a PR for the [Package](https://www.npmjs.com/package/@cssnr/vitepress-swiper) or [Documentation](https://vitepress-swiper.cssnr.com/),
+see the [CONTRIBUTING.md](#contributing-ov-file).
+
+Please consider making a donation to support the development of this project and additional open source projects.
 
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/cssnr)
 
