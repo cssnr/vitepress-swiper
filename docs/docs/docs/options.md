@@ -1,3 +1,9 @@
+---
+prev:
+  text: 'Get Started'
+  link: '/guides/get-started'
+---
+
 # Options
 
 There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options).
@@ -24,7 +30,7 @@ You must provide `:slides` or a `base-url` but **not both**.
 | margin <CB />                  |        `null`        | String  | [CSS margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)                 |
 | border-radius <CB />           |        `8px`         | String  | [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)   |
 
-> **¹** Only used with [Dynamic URL's](dynamic.md)
+> **¹** Only used with [Dynamic URL's](../guides/dynamic.md)
 
 ### Swiper Options
 
@@ -53,6 +59,15 @@ Swiper Parameters: https://swiperjs.com/swiper-api#parameters
 | [:cube-effect](https://swiperjs.com/swiper-api#cube-effect-parameters) <CB />           |    `{ }`     | Object  | EffectCube parameters               |
 | [:fade-effect](https://swiperjs.com/swiper-api#fade-effect-parameters) <CB />           |    `{ }`     | Object  | EffectFade parameters               |
 | [:flip-effect](https://swiperjs.com/swiper-api#flip-effect-parameters) <CB />           |    `{ }`     | Object  | EffectFlip parameters               |
+
+&nbsp;
+
+See the [Usage](../guides/get-started.md#usage) guide or the [Examples](../examples/index.md)
+for details on using the `<VPSwiper>` tag.
+
+If your images are named numerically and sequentially, check out the [Dynamic URL's](../guides/dynamic.md) guide.
+
+&nbsp;
 
 ::: tip ❔ ADDITIONAL OPTIONS
 If you need more options, please [request a feature](../support.md).

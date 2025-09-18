@@ -14,7 +14,7 @@ hero:
       link: /guides/get-started
       theme: brand
     - text: Options
-      link: /guides/options
+      link: /docs/options
       theme: alt
     - text: Examples
       link: /examples/
@@ -29,7 +29,7 @@ features:
     link: /guides/get-started
   - title: Plugin Options
     details: View Options and Parameters
-    link: /guides/options
+    link: /docs/options
   - title: Live Demos
     details: View Plugin Examples
     link: /examples/
@@ -39,8 +39,8 @@ features:
   - title: NPM Package
     details: View Package on NPM
     link: https://www.npmjs.com/package/@cssnr/vitepress-swiper
-  - title: GitHub Source Code
-    details: View Code on GitHub
+  - title: GitHub Repository
+    details: View the Source on GitHub
     link: https://github.com/cssnr/vitepress-swiper
 ---
 
@@ -48,12 +48,12 @@ features:
 
 [![NPM Downloads](https://img.shields.io/npm/dw/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![NPM Version](https://img.shields.io/npm/v/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
-[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
+[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases)
 [![NPM Bundle Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=npm)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
-[![NPM Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-plugin-copybutton/npm?logo=github&label=release)](https://github.com/cssnr/vitepress-plugin-copybutton/deployments/npm)
-[![Pages Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-plugin-copybutton/docs?logo=github&label=docs)](https://github.com/cssnr/vitepress-plugin-copybutton/deployments/docs)
-[![GitHub Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=cachet&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
-[![GitHub Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
+[![Deployments NPM](https://img.shields.io/github/deployments/cssnr/vitepress-plugin-copybutton/npm?logo=github&label=release)](https://github.com/cssnr/vitepress-plugin-copybutton/deployments/npm)
+[![Deployments Pages](https://img.shields.io/github/deployments/cssnr/vitepress-plugin-copybutton/docs?logo=github&label=docs)](https://github.com/cssnr/vitepress-plugin-copybutton/deployments/docs)
+[![WF Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=cachet&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
+[![WF Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper?tab=readme-ov-file#readme)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/vitepress-swiper?logo=htmx&logoColor=white)](https://github.com/cssnr/vitepress-swiper/blob/master/src/VPSwiper.vue)

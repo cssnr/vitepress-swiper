@@ -50,9 +50,11 @@ https://example.com/path/slide-10.png
 https://example.com/path/slide-11.png
 ```
 
-Make sure to check out the [Additional Options](options.md).
+Make sure to check out the [Additional Options](../docs/options.md).
 
 _Note: HTML tags must be seperated from Markdown with one blank line._
+
+&nbsp;
 
 ::: info 🖼️ LIVE DEMOS
 You can view more on the [Examples page](../examples/index.md).

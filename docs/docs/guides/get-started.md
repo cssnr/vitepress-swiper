@@ -1,7 +1,10 @@
 ---
 prev:
-  text: 'Examples'
-  link: '/examples/'
+  text: 'Get Help'
+  link: '/support'
+next:
+  text: 'Plugin Options'
+  link: '/docs/options'
 ---
 
 # Getting Started
@@ -93,9 +96,13 @@ Add a `<VPSwiper>` tag to your Markdown where you want the Swiper to appear.
 />
 ```
 
+```vue [Dynamic URL's ~vscode-icons:file-type-text~]
+<VPSwiper base-url="https://example.com/path" :number-of-slides="3" />
+```
+
 :::
 
-Make sure to check out the [Additional Options](options.md).
+Make sure to check out the [Additional Options](../docs/options.md).
 
 _Note: HTML tags must be seperated from Markdown with one blank line._
 
@@ -108,6 +115,8 @@ You can view more on the [Examples page](../examples/index.md).
 You can generate URL's dynamically using numbers to reduce boilerplate.
 
 See the [Dynamic URL's Page](dynamic.md) for more details.
+
+&nbsp;
 
 ::: tip ❔ GET HELP
 If you have any trouble getting started, [support is available](../support.md).

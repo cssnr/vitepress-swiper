@@ -1,4 +1,7 @@
 ---
+prev:
+  text: 'Examples'
+  link: '/examples/'
 next:
   text: 'Get Started'
   link: '/guides/get-started'

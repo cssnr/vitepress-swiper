@@ -81,8 +81,9 @@ export default defineConfig({
     siteTitle: settings.siteTitle,
     logo: settings.image32,
     nav: [
-      { text: 'Home', link: '/' },
+      // { text: 'Home', link: '/' },
       { text: 'Get Started', link: '/guides/get-started', activeMatch: '/guides/' },
+      { text: 'Docs', link: '/docs/options', activeMatch: '/docs/' },
       { text: 'Examples', link: '/examples/', activeMatch: '/examples/' },
       {
         text: 'Links',
@@ -112,11 +113,19 @@ export default defineConfig({
       {
         text: 'Guides',
         base: '/guides',
+        collapsed: false,
         items: [
           { text: 'Get Started', link: '/get-started' },
-          { text: 'Plugin Options', link: '/options' },
           { text: "Dynamic URL's", link: '/dynamic' },
           { text: 'Use from Source', link: '/source' },
+        ],
+      },
+      {
+        text: 'Docs',
+        base: '/docs',
+        items: [
+          { text: 'Plugin Options', link: '/options' },
+          //
         ],
       },
       {

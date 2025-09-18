@@ -1,11 +1,11 @@
 [![NPM Downloads](https://img.shields.io/npm/dw/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![NPM Version](https://img.shields.io/npm/v/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
-[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases/latest)
+[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases)
 [![NPM Bundle Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=npm)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
-[![NPM Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=github&label=release)](https://github.com/cssnr/vitepress-swiper/deployments/npm)
-[![Pages Deployments](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/docs?logo=github&label=docs)](https://github.com/cssnr/vitepress-swiper/deployments/docs)
-[![Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=cachet&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
-[![Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
+[![Deployments NPM](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=github&label=release)](https://github.com/cssnr/vitepress-swiper/deployments/npm)
+[![Deployments Pages](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/docs?logo=github&label=docs)](https://github.com/cssnr/vitepress-swiper/deployments/docs)
+[![WF Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=cachet&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
+[![WF Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=cachet&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![GitHub Contributors](https://img.shields.io/github/contributors/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/graphs/contributors)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/pulse)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/vitepress-swiper?logo=bookstack&logoColor=white&label=repo%20size)](https://github.com/cssnr/vitepress-swiper?tab=readme-ov-file#readme)
@@ -202,7 +202,7 @@ There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options
 
 _Note: String parameters do **not** begin with a `:` but all other types do._
 
-> View the [Options Guide](https://vitepress-swiper.cssnr.com/guides/options).
+> View the [Options Guide](https://vitepress-swiper.cssnr.com/docs/options).
 
 ### Plugin Options
 

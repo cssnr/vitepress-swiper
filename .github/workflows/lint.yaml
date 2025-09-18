@@ -16,13 +16,12 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Setup Node 22"
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
-          #cache: npm
 
       - name: "Install"
         id: install
@@ -64,3 +63,18 @@ jobs:
           "${RUNNER_TEMP}/actionlint" --version
           echo "::endgroup::"
           "${RUNNER_TEMP}/actionlint" -color -verbose -shellcheck= -pyflakes=
+
+      # Note: this will most likely be split into two different workflows...
+      - name: "Check Docs Changes"
+        id: docs-changed
+        uses: tj-actions/changed-files@24d32ffd492484c1d75e0c0b894501ddb9d30d62 # v47
+        with:
+          files: |
+            docs/**
+            .github/workflows/pages.yaml
+
+      - name: "Verify Docs Build"
+        if: steps.docs-changed.outputs.any_changed == 'true'
+        run: |
+          npm run get-contributors
+          npm run docs:build

@@ -1,7 +1,10 @@
 ---
+prev:
+  text: 'Get Started'
+  link: '/guides/get-started'
 next:
-  text: 'Usage'
-  link: '/guides/get-started#usage'
+  text: 'Plugin Options'
+  link: '/docs/options'
 ---
 
 # Use from Source
