@@ -47,16 +47,15 @@ npm run build
 
 These [docs](docs) are **written in plain text** using Markdown and built with [VitePress](https://vitepress.dev/).
 
-| Location                                                             | Description                  |
-| -------------------------------------------------------------------- | ---------------------------- |
-| [docs](docs)                                                         | Documentation Root           |
-| [docs/docs](docs/docs)                                               | Markdown Files Root          |
-| [docs/public](docs/docs/public)                                      | Static Files Root            |
-| [docs/.vitepress](docs/.vitepress)                                   | VitePress Configuration Root |
-| [docs/.vitepress/config.mts](docs/.vitepress/config.mts)             | VitePress Configuration File |
-| [docs/.vitepress/theme/index.js](docs/.vitepress/theme/index.js)     | VitePress Theme File         |
-| [docs/.vitepress/theme/custom.css](docs/.vitepress/theme/custom.css) | VitePress Global CSS File    |
-| [docs/.vitepress/theme/components](docs/.vitepress/theme/components) | VitePress Components Root    |
+| Location                                                             | Description               |
+| -------------------------------------------------------------------- | ------------------------- |
+| [docs](docs)                                                         | Documentation Root        |
+| [docs/public](docs/public)                                           | Static Files Root         |
+| [docs/.vitepress](docs/.vitepress)                                   | VitePress Root            |
+| [docs/.vitepress/config.mts](docs/.vitepress/config.mts)             | VitePress Config File     |
+| [docs/.vitepress/theme/index.js](docs/.vitepress/theme/index.js)     | VitePress Theme File      |
+| [docs/.vitepress/theme/custom.css](docs/.vitepress/theme/custom.css) | VitePress Global CSS File |
+| [docs/.vitepress/theme/components](docs/.vitepress/theme/components) | VitePress Components Root |
 
 To get started, clone the repository, install the project, and generate the contributors file.
 
