@@ -1,20 +1,7 @@
 {
   "name": "@cssnr/vitepress-swiper",
   "version": "0.0.1",
-  "license": "GPL-3.0-only",
   "description": "A VitePress Plugin to Easily add a SwiperJS Photo Gallery or Image Slideshow with Custom Options.",
-  "homepage": "https://vitepress-swiper.cssnr.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cssnr/vitepress-swiper.git"
-  },
-  "bugs": {
-    "url": "https://github.com/cssnr/vitepress-swiper/issues"
-  },
-  "funding": {
-    "type": "ko-fi",
-    "url": "https://ko-fi.com/cssnr"
-  },
   "keywords": [
     "vitepress-plugin",
     "vitepress",
@@ -26,24 +13,46 @@
     "photo",
     "slideshow"
   ],
+  "homepage": "https://vitepress-swiper.cssnr.com",
+  "bugs": {
+    "url": "https://github.com/cssnr/vitepress-swiper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cssnr/vitepress-swiper.git"
+  },
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/cssnr"
+  },
+  "license": "GPL-3.0-only",
+  "author": {
+    "name": "Shane",
+    "url": "https://cssnr.github.io/"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/VPSwiper.es.js",
+      "require": "./dist/VPSwiper.umd.js"
+    },
+    "./style.css": "./dist/VPSwiper.css"
+  },
   "main": "dist/VPSwiper.umd.js",
   "module": "dist/VPSwiper.es.js",
+  "types": "dist/VPSwiper.vue.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "vite build",
-    "prepare": "npm run build",
-    "docs": "vitepress dev docs",
+    "docs": "npm run docs:dev",
     "docs:build": "vitepress build docs",
+    "docs:deploy": "npm run get-contributors && npm run docs:build",
+    "docs:dev": "vitepress dev docs",
     "docs:preview": "vitepress preview docs",
     "get-contributors": "npx get-contributors cssnr/vitepress-swiper -f docs/.vitepress/contributors.json",
+    "prepare": "npm run build",
     "prettier": "npx prettier --check ."
-  },
-  "peerDependencies": {
-    "swiper": ">=11.0.0",
-    "vitepress": "*",
-    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@cssnr/vitepress-plugin-contributors": "^0.0.3",
@@ -55,11 +64,9 @@
     "vitepress-plugin-group-icons": "^1.6.3",
     "vue": "^3.5.21"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/VPSwiper.es.js",
-      "require": "./dist/VPSwiper.umd.js"
-    },
-    "./style.css": "./dist/VPSwiper.css"
+  "peerDependencies": {
+    "swiper": ">=11.0.0",
+    "vitepress": "*",
+    "vue": "^3.0.0"
   }
 }

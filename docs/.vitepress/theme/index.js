@@ -14,7 +14,9 @@ import contributors from '../contributors.json'
 import CopyButton from '@cssnr/vitepress-plugin-copybutton'
 import '@cssnr/vitepress-plugin-copybutton/style.css'
 
+// https://vitepress.dev/guide/extending-default-theme
 // noinspection JSUnusedGlobalSymbols
+/** @type {import('vitepress').Theme} */
 export default {
     ...DefaultTheme,
 
