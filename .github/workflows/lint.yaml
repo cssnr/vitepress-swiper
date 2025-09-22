@@ -76,5 +76,4 @@ jobs:
       - name: "Verify Docs Build"
         if: steps.docs-changed.outputs.any_changed == 'true'
         run: |
-          npm run get-contributors
-          npm run docs:build
+          npm run docs:deploy
