@@ -38,8 +38,6 @@ If you run into any problems or find a bug, please [open an issue](https://githu
 
 You can chat with us about anything [on discord](https://discord.gg/wXy6m2X8wY).
 
-From here you can contact me directly, `Shane@111150265075298304`.
-
 [![Chat on Discord](https://img.shields.io/badge/Chat_on_Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/wXy6m2X8wY)
 
 ### General Feedback

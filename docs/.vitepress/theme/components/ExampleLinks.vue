@@ -26,7 +26,7 @@ const links = [
         <a :href="link.href">{{ link.text }}</a>
       </template>
       <template v-else>{{ link.text }}</template>
-      <template v-if="i < links.length - 1">{{ ' ' + props.seperator.trim() + ' ' }} </template>
+      <template v-if="i < links.length - 1">{{ ' ' + props.seperator.trim() + ' ' }}</template>
     </template>
   </p>
   <ul v-else>
