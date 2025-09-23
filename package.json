@@ -52,14 +52,15 @@
     "docs:preview": "vitepress preview docs",
     "get-contributors": "npx get-contributors cssnr/vitepress-swiper -f docs/.vitepress/contributors.json",
     "prepare": "npm run build",
-    "prettier": "npx prettier --check ."
+    "prettier:check": "npx prettier --check .",
+    "prettier:write": "npx prettier --write ."
   },
   "devDependencies": {
     "@cssnr/vitepress-plugin-contributors": "^0.0.3",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "prettier": "^3.6.2",
-    "vite": "^7.1.5",
+    "vite": "^7.1.7",
     "vitepress": "^1.6.4",
     "vitepress-plugin-group-icons": "^1.6.3",
     "vue": "^3.5.21"

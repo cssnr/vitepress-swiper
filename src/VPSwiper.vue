@@ -37,6 +37,7 @@ const props = defineProps({
   noFullscreen: { type: Boolean, default: false },
   height: { type: String, default: null },
   margin: { type: String, default: null },
+  backgroundColor: { type: String, default: 'var(--vp-code-block-bg)' },
   borderRadius: { type: String, default: '8px' },
 
   slidesPerView: { type: Number, default: 1 },
@@ -175,7 +176,7 @@ const requestFullscreen = () => {
   --swiper-pagination-color: var(--vp-c-purple-1);
   --swiper-navigation-color: var(--vp-c-purple-1);
   --swiper-navigation-sides-offset: 4px;
-  background-color: var(--vp-code-block-bg);
+  background-color: v-bind('props.backgroundColor');
   border-radius: v-bind('props.borderRadius');
 }
 

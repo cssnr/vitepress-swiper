@@ -33,10 +33,10 @@ jobs:
       #  run: |
       #    npm run lint
 
-      - name: "Prettier"
+      - name: "Prettier Check"
         if: ${{ !cancelled() }}
         run: |
-          npm run prettier
+          npm run prettier:check
 
       - name: "Yamllint"
         if: ${{ !cancelled() }}
