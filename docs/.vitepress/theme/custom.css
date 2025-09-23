@@ -24,15 +24,16 @@ table th {
     display: none;
 }
 
-/* NOTE: This is a "fix" for the search modal content shift */
-@supports (scrollbar-gutter: stable) {
-    /* Note: local search is: 768px */
-    @media (min-width: 769px) {
-        html {
-            scrollbar-gutter: stable;
-        }
-    }
-}
+/*!* NOTE: This is a "fix" for the search modal content shift *!*/
+/*!* NOTE: This fix has bugs on fullscreen elements like swiper *!*/
+/*@supports (scrollbar-gutter: stable) {*/
+/*    !* Note: local search is: 768px *!*/
+/*    @media (min-width: 769px) {*/
+/*        html {*/
+/*            scrollbar-gutter: stable;*/
+/*        }*/
+/*    }*/
+/*}*/
 
 .vp-doc p > img,
 .vp-doc p > a > img {

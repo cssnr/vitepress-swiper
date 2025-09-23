@@ -14,21 +14,22 @@ _Note: String parameters do **not** begin with a `:` but all other types do._
 
 You must provide `:slides` or a `base-url` but **not both**.
 
-| Property&nbsp;Name             |  Default&nbsp;Value  |  Type   | Description&nbsp;of&nbsp;Value                                                        |
-| :----------------------------- | :------------------: | :-----: | :------------------------------------------------------------------------------------ |
-| **:slides** <CB />             |   or **base-url**    |  Array  | Base URL for image sources                                                            |
-| **base-url** **¹** <CB />      |    or **:slides**    | String  | Base URL for image sources                                                            |
-| :number-of-slides **¹** <CB /> |         `1`          | Number  | Number of slides to generate                                                          |
-| :start-at **¹** <CB />         |         `1`          | Number  | Number to start generation                                                            |
-| file-ext **¹** <CB />          |        `.jpg`        | String  | Extension for file names                                                              |
-| :pad-start **¹** <CB />        |         `1`          | Number  | Pad file names with `0`'s                                                             |
-| file-name-prefix **¹** <CB />  |         ` `          | String  | Prefix for file names                                                                 |
-| alt-text-prefix <CB />         |      `Loading`       | String  | Prefix for `alt` attributes                                                           |
-| button-text <CB />             | `View in Fullscreen` | String  | Text for fullscreen button                                                            |
-| no-fullscreen <CB />           |       `false`        | Boolean | Disable fullscreen button                                                             |
-| height <CB />                  |        `null`        | String  | [CSS height](https://developer.mozilla.org/en-US/docs/Web/CSS/height) (default: auto) |
-| margin <CB />                  |        `null`        | String  | [CSS margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)                 |
-| border-radius <CB />           |        `8px`         | String  | [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)   |
+| Property&nbsp;Name             |    Default&nbsp;Value     |  Type   | Description&nbsp;of&nbsp;Value                                                            |
+| :----------------------------- | :-----------------------: | :-----: | :---------------------------------------------------------------------------------------- |
+| **:slides** <CB />             |      or **base-url**      |  Array  | Base URL for image sources                                                                |
+| **base-url** **¹** <CB />      |      or **:slides**       | String  | Base URL for image sources                                                                |
+| :number-of-slides **¹** <CB /> |            `1`            | Number  | Number of slides to generate                                                              |
+| :start-at **¹** <CB />         |            `1`            | Number  | Number to start generation                                                                |
+| file-ext **¹** <CB />          |          `.jpg`           | String  | Extension for file names                                                                  |
+| :pad-start **¹** <CB />        |            `1`            | Number  | Pad file names with `0`'s                                                                 |
+| file-name-prefix **¹** <CB />  |            ` `            | String  | Prefix for file names                                                                     |
+| alt-text-prefix <CB />         |         `Loading`         | String  | Prefix for `alt` attributes                                                               |
+| button-text <CB />             |   `View in Fullscreen`    | String  | Text for fullscreen button                                                                |
+| no-fullscreen <CB />           |          `false`          | Boolean | Disable fullscreen button                                                                 |
+| height <CB />                  |          `null`           | String  | [CSS height](https://developer.mozilla.org/en-US/docs/Web/CSS/height) (default: auto)     |
+| margin <CB />                  |          `null`           | String  | [CSS margin](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)                     |
+| background-color <CB />        | `var(--vp-code-block-bg)` | String  | [CSS background-color](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color) |
+| border-radius <CB />           |           `8px`           | String  | [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)       |
 
 > **¹** Only used with [Dynamic URL's](../guides/dynamic.md)
 
