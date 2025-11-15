@@ -39,7 +39,6 @@
   },
   "main": "dist/VPSwiper.umd.js",
   "module": "dist/VPSwiper.es.js",
-  "types": "dist/VPSwiper.vue.d.ts",
   "files": [
     "dist"
   ],
@@ -56,14 +55,14 @@
     "prettier:write": "npx prettier --write ."
   },
   "devDependencies": {
-    "@cssnr/vitepress-plugin-contributors": "^0.0.3",
+    "@cssnr/vitepress-plugin-contributors": "^0.0.5",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "prettier": "^3.6.2",
-    "vite": "^7.1.7",
+    "vite": "^7.2.2",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-group-icons": "^1.6.3",
-    "vue": "^3.5.21"
+    "vitepress-plugin-group-icons": "^1.6.5",
+    "vue": "^3.5.24"
   },
   "peerDependencies": {
     "swiper": ">=11.0.0",
