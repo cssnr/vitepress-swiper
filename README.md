@@ -38,14 +38,12 @@ Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery
 
 ## Install
 
-There are 2 ways to install this plugin based on preference.
+- [NPM Package](#NPM-Package) - Easiest, minimal footprint, no source access
+- [From Source](#From-Source) - Adds 1 file to your project, full source access
 
-1. [As a Dependency](#as-a-dependency) - Easiest, minimal footprint, no source access
-2. [From the Source](#from-the-source) - Adds 1 file to your project, full source access
+View the [Installation Guide](https://vitepress-swiper.cssnr.com/guides/get-started#install) for more details.
 
-> View the [Installation Guide](https://vitepress-swiper.cssnr.com/guides/get-started#install).
-
-### As a Dependency
+### NPM Package
 
 NPM Package: https://www.npmjs.com/package/@cssnr/vitepress-swiper
 
@@ -76,7 +74,7 @@ see the [Setup Guide](https://vitepress-swiper.cssnr.com/guides/get-started#setu
 
 Proceed to [Usage](#Usage).
 
-### From the Source
+### From Source
 
 Add to your project:
 

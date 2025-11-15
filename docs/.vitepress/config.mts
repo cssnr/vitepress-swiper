@@ -153,7 +153,7 @@ export default defineConfig({
     ],
 
     editLink: {
-      pattern: `${settings.source_repo}/docs/blob/master/docs/:path`,
+      pattern: `${settings.source_repo}/blob/master/docs/:path`,
       text: 'View or Edit on GitHub',
     },
 

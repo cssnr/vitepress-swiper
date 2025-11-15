@@ -3,19 +3,19 @@ name: "PR Labeler"
 on:
   pull_request_target:
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   labeler:
     name: "Labeler"
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
+    permissions:
+      pull-requests: write
+      issues: write
+
     steps:
       - name: "Checkout Configs"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: cssnr/configs
           ref: master

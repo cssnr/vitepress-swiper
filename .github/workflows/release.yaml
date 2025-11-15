@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Debug Event"
         continue-on-error: true
@@ -43,10 +43,10 @@ jobs:
         run: |
           cat package.json
 
-      - name: "Setup Node 22"
-        uses: actions/setup-node@v4
+      - name: "Setup Node"
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           registry-url: "https://registry.npmjs.org"
 
       - name: "Install"
@@ -61,7 +61,7 @@ jobs:
           npm publish --provenance --access public
 
       - name: "Upload to Actions"
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         continue-on-error: true
         with:
           name: dist
@@ -72,13 +72,11 @@ jobs:
         run: |
           zip -r dist.zip dist package.json README.md LICENSE
 
-      - name: "Upload to Release"
-        if: ${{ github.event_name == 'release' }}
-        uses: svenstaro/upload-release-action@v2
+      - name: "Upload Release"
+        uses: cssnr/upload-release-action@v1
         continue-on-error: true
         with:
-          file: dist.zip
-          tag: ${{ github.ref }}
+          files: dist.zip
 
       - name: "Update Release Notes Action"
         uses: smashedr/update-release-notes-action@master
@@ -88,10 +86,11 @@ jobs:
 
       - name: "Package Changelog Action"
         continue-on-error: true
-        uses: cssnr/package-changelog-action@v1
+        uses: cssnr/package-changelog-action@v2
 
       - name: "Send Failure Notification"
         if: ${{ failure() }}
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          description: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}

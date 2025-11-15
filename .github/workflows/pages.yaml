@@ -1,56 +1,34 @@
 name: "Pages"
 
 on:
-  push:
-    branches:
-      - "master"
-    paths:
-      - "docs/**"
-      - ".github/workflows/pages.yaml"
   workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - ".github/workflows/pages.yaml"
+      - ".vitepress/**"
+      - "docs/**"
+      - "package*.json"
 
 env:
-  CRAWLER_ID: "b2b42be2-ff7f-45a8-8d84-828f80ae8616"
-
-permissions:
-  contents: read
+  crawler-id: "b2b42be2-ff7f-45a8-8d84-828f80ae8616"
+  purge-domain: ""
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     name: "Build"
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-
-      - name: "Setup Node 22"
-        uses: actions/setup-node@v5
-        with:
-          node-version: 22
-
-      - name: "Configure Pages"
-        uses: actions/configure-pages@v5
-
-      - name: "Install Dependencies"
-        run: |
-          npm ci
-
-      - name: "Run Build"
-        run: |
-          npm run docs:deploy
-
-      - name: "Upload Pages Artifact"
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: docs/.vitepress/dist
+    if: ${{ !contains(github.event.head_commit.message, '#nodeploy') }}
+    uses: cssnr/workflows/.github/workflows/npm-build.yaml@master
+    permissions:
+      contents: read
+    with:
+      build: "npm run docs:deploy"
+      path: "docs/.vitepress/dist"
+      pages: true
 
   deploy:
     name: "Deploy"
@@ -63,7 +41,7 @@ jobs:
       id-token: write
 
     environment:
-      name: docs
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
@@ -77,6 +55,7 @@ jobs:
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          description: ${{ steps.deployment.outputs.page_url }}
 
   post:
     name: "Post-Deploy"
@@ -85,16 +64,24 @@ jobs:
     needs: deploy
 
     steps:
-      - name: "Algolia Crawler"
-        if: ${{ env.CRAWLER_ID != '' }}
-        uses: cssnr/algolia-crawler-action@v1
+      - name: "Purge Cache"
+        if: ${{ env.purge-domain != '' }}
+        uses: cssnr/cloudflare-purge-cache-action@v2
         with:
-          crawler_id: ${{ env.CRAWLER_ID }}
+          zones: ${{ env.purge-domain }}
+          token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+      - name: "Algolia Crawler"
+        if: ${{ env.crawler-id != '' }}
+        uses: cssnr/algolia-crawler-action@v2
+        with:
+          crawler_id: ${{ env.crawler-id }}
           crawler_user_id: ${{ secrets.CRAWLER_USER_ID }}
           crawler_api_key: ${{ secrets.CRAWLER_API_KEY }}
 
-      - name: "Send Post-Deploy Notification"
+      - name: "Send Discord Notification"
         if: ${{ failure() }}
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          description: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
