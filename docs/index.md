@@ -48,7 +48,7 @@ features:
 
 [![NPM Version](https://img.shields.io/npm/v/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
 [![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/vitepress-swiper?logo=github)](https://github.com/cssnr/vitepress-swiper/releases)
-[![NPM Downloads](https://img.shields.io/npm/dm/%40cssnr%2Fvitepress-swiper?logo=npm)](https://www.npmjs.com/package/@cssnr/vitepress-swiper)
+[![NPM Downloads](https://img.shields.io/npm/dm/%40cssnr%2Fvitepress-swiper?logo=npm)](https://npm-stat.com/charts.html?package=%40cssnr%2Fvitepress-swiper)
 [![Bundlephobia Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=bookstack&logoColor=white)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
 [![Deployments NPM](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=npm&label=deploy)](https://github.com/cssnr/vitepress-swiper/deployments/npm)
 [![Deployments Docs](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/docs?logo=vitepress&logoColor=white&label=docs)](https://github.com/cssnr/vitepress-swiper/deployments/docs)
