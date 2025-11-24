@@ -73,6 +73,7 @@ jobs:
           zip -r dist.zip dist package.json README.md LICENSE
 
       - name: "Upload Release"
+        if: ${{ github.event_name == 'release' }}
         uses: cssnr/upload-release-action@v1
         continue-on-error: true
         with:
@@ -90,7 +91,7 @@ jobs:
 
       - name: "Send Failure Notification"
         if: ${{ failure() }}
-        uses: sarisia/actions-status-discord@v1
+        uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           description: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}

@@ -64,14 +64,14 @@ jobs:
           echo "::endgroup::"
           "${RUNNER_TEMP}/actionlint" -color -verbose -shellcheck= -pyflakes=
 
-      # Note: this will most likely be split into two different workflows...
+      # Lint: docs/
       - name: "Check Docs Changes"
         id: docs-changed
         uses: tj-actions/changed-files@24d32ffd492484c1d75e0c0b894501ddb9d30d62 # v47
         with:
           files: |
             docs/**
-            .github/workflows/pages.yaml
+            package*.json
 
       - name: "Verify Docs Build"
         if: steps.docs-changed.outputs.any_changed == 'true'
