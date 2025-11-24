@@ -57,12 +57,12 @@
   "devDependencies": {
     "@cssnr/vitepress-plugin-contributors": "^0.0.5",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
-    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue": "^6.0.2",
     "prettier": "^3.6.2",
-    "vite": "^7.2.2",
+    "vite": "^7.2.4",
     "vitepress": "^1.6.4",
     "vitepress-plugin-group-icons": "^1.6.5",
-    "vue": "^3.5.24"
+    "vue": "^3.5.25"
   },
   "peerDependencies": {
     "swiper": ">=11.0.0",

@@ -1,8 +1,9 @@
 .idea/
 *.iml
 .vscode/
-**/cache/
-**/dist/
+cache/
+dist/
+build/
 node_modules/
-**/*.tgz
+*.tgz
 contributors.json

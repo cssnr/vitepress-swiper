@@ -147,6 +147,7 @@ export default defineConfig({
         text: 'Support',
         items: [
           { text: 'Get Help', link: '/support' },
+          { text: 'VitePress Resources', link: '/resources' },
           //
         ],
       },
