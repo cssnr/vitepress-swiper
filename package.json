@@ -52,17 +52,18 @@
     "get-contributors": "npx get-contributors cssnr/vitepress-swiper -f docs/.vitepress/contributors.json",
     "prepare": "npm run build",
     "prettier:check": "npx prettier --check .",
-    "prettier:write": "npx prettier --write ."
+    "prettier:write": "npx prettier --write .",
+    "yamllint": "yamllint -c .github/yamllint.yaml ."
   },
   "devDependencies": {
     "@cssnr/vitepress-plugin-contributors": "^0.0.5",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
-    "@vitejs/plugin-vue": "^6.0.2",
-    "prettier": "^3.6.2",
-    "vite": "^7.2.4",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "prettier": "^3.8.1",
+    "vite": "^7.3.1",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-group-icons": "^1.6.5",
-    "vue": "^3.5.25"
+    "vitepress-plugin-group-icons": "^1.7.1",
+    "vue": "^3.5.29"
   },
   "peerDependencies": {
     "swiper": ">=11.0.0",

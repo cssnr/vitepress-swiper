@@ -11,7 +11,7 @@ next:
 
 If you run into any issues or want to see any new features, please let us know!
 
-Contributing is as easy as telling us [what features or changes](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) you want to see next…
+Contributing is as easy as telling us [what features or changes](https://github.com/cssnr/vitepress-swiper/issues/new?template=1-feature.yaml) you want to see next…
 
 [[toc]]
 
@@ -21,8 +21,7 @@ If you have a question or need help with anything,
 start a discussion in [General](https://github.com/cssnr/vitepress-swiper/discussions/categories/general)
 or [Q&A](https://github.com/cssnr/vitepress-swiper/discussions/categories/q-a).
 
-If you want to see a new feature, start a discussion in
-the [Feature Requests](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests) section.
+If you want to see a new feature, submit a [Feature Requests](https://github.com/cssnr/vitepress-swiper/issues/new?template=1-feature.yaml).
 
 [![Start A Discussion](https://img.shields.io/badge/Start_A_Discussion-blue?style=for-the-badge&logo=github)](https://github.com/cssnr/vitepress-swiper/discussions)
 
@@ -40,10 +39,12 @@ You can chat with us about anything [on discord](https://discord.gg/wXy6m2X8wY).
 
 [![Chat on Discord](https://img.shields.io/badge/Chat_on_Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/wXy6m2X8wY)
 
-### General Feedback
-
-You can submit general feedback via the [web form](https://cssnr.github.io/feedback/?app=VitePress%20Swiper).
-
-_This method is not recommended to [report issues](https://github.com/cssnr/vitepress-swiper/issues) or [request features](https://github.com/cssnr/vitepress-swiper/discussions/categories/feature-requests)._
-
 [https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=VitePress%20Swiper)
+
+<a href="https://github.com/cssnr/vitepress-swiper">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=cssnr/vitepress-swiper&type=date&legend=bottom-right&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=cssnr/vitepress-swiper&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=cssnr/vitepress-swiper&type=date&legend=bottom-right" />
+ </picture>
+</a>
