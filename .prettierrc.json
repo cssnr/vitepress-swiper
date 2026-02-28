@@ -1,5 +1,4 @@
 {
-  "trailingComma": "es5",
   "semi": false,
   "singleQuote": true,
   "printWidth": 110,
@@ -7,11 +6,12 @@
     {
       "files": ["**/*.html", "**/*.yaml", "**/*.yml"],
       "options": {
-        "singleQuote": false
+        "singleQuote": false,
+        "printWidth": 120
       }
     },
     {
-      "files": ["**/*.js", "**/*.css", "**/*.scss"],
+      "files": ["**/*.js", "**/*.mjs", "**/*.css", "**/*.scss"],
       "options": {
         "tabWidth": 4
       }
