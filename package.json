@@ -43,7 +43,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist",
     "docs": "npm run docs:dev",
     "docs:build": "vitepress build docs",
     "docs:deploy": "npm run get-contributors && npm run docs:build",
@@ -56,18 +56,19 @@
     "yamllint": "yamllint -c .github/yamllint.yaml ."
   },
   "devDependencies": {
-    "@cssnr/vitepress-plugin-contributors": "^0.0.5",
+    "@cssnr/vitepress-plugin-contributors": "^0.2.0",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
-    "@vitejs/plugin-vue": "^6.0.4",
-    "prettier": "^3.8.1",
-    "vite": "^7.3.1",
+    "@types/react": "^18.3.28",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "prettier": "^3.8.3",
+    "vite": "^8.0.8",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-group-icons": "^1.7.1",
-    "vue": "^3.5.29"
+    "vitepress-plugin-group-icons": "^1.7.5",
+    "vue": "^3.5.32",
+    "vue-tsc": "^3.2.7"
   },
   "peerDependencies": {
     "swiper": ">=11.0.0",
-    "vitepress": "*",
     "vue": "^3.0.0"
   }
 }

@@ -34,7 +34,7 @@ jobs:
           echo "::endgroup::"
 
       - name: "Update Package Version"
-        uses: cssnr/update-json-value-action@v1
+        uses: cssnr/update-json-value-action@v2
         with:
           file: "package.json"
 
@@ -61,7 +61,7 @@ jobs:
           npm publish --provenance --access public
 
       - name: "Upload to Actions"
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         continue-on-error: true
         with:
           name: dist
@@ -94,4 +94,4 @@ jobs:
         uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          description: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+          description: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
