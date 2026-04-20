@@ -2,10 +2,13 @@ name: "Lint"
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [master]
   push:
     branches: [master]
+    paths-ignore: &paths
+      - "docs/**"
+  pull_request:
+    branches: [master]
+    paths-ignore: *paths
 
 jobs:
   lint:
@@ -25,8 +28,11 @@ jobs:
 
       - name: "Install"
         id: install
-        run: |
-          npm ci
+        run: npm ci
+
+      - name: "Debug dist"
+        continue-on-error: true
+        run: ls -lahR dist
 
       #- name: "eslint"
       #  if: ${{ !cancelled() }}
@@ -35,8 +41,7 @@ jobs:
 
       - name: "prettier"
         if: ${{ !cancelled() }}
-        run: |
-          npm run prettier:check
+        run: npm run prettier:check
 
       - name: "yamllint"
         if: ${{ !cancelled() }}
@@ -51,19 +56,3 @@ jobs:
       - name: "actionlint"
         if: ${{ !cancelled() }}
         uses: cssnr/actionlint-action@v1
-        with:
-          shellcheck_opts: -e SC2129
-
-      # Lint: docs/
-      - name: "Check Docs Changes"
-        id: docs-changed
-        uses: tj-actions/changed-files@24d32ffd492484c1d75e0c0b894501ddb9d30d62 # v47
-        with:
-          files: |
-            docs/**
-            package*.json
-
-      - name: "Verify Docs Build"
-        if: steps.docs-changed.outputs.any_changed == 'true'
-        run: |
-          npm run docs:deploy

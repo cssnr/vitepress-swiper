@@ -1,11 +1,11 @@
-name: "Dev"
+name: "Preview"
 
 on:
   workflow_dispatch:
   push:
     branches-ignore: [master]
     paths:
-      - ".github/workflows/dev.yaml"
+      - ".github/workflows/preview.yaml"
       - ".vitepress/**"
       - "docs/**"
       - "package*.json"
@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build:
     name: "Build"
-    if: ${{ !contains(github.event.head_commit.message, '#nodev') }}
+    if: ${{ !contains(github.event.head_commit.message, '#nopreview') }}
     uses: cssnr/workflows/.github/workflows/npm-build.yaml@master
     permissions:
       contents: read
@@ -34,7 +34,7 @@ jobs:
     permissions:
       contents: read
     with:
-      name: "dev"
+      name: "preview"
       url: "https://dev-static.cssnr.com/"
       robots: true
     secrets:
@@ -43,3 +43,25 @@ jobs:
       user: ${{ secrets.DEV_DEPLOY_USER }}
       pass: ${{ secrets.DEV_DEPLOY_PASS }}
       webhook: ${{ secrets.DISCORD_WEBHOOK }}
+
+  lint:
+    name: "Lint"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: ${{ !contains(github.event.head_commit.message, '#nolint') }}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v6
+
+      - name: "Setup Node 24"
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: "Install"
+        id: install
+        run: npm ci
+
+      - name: "prettier"
+        if: ${{ !cancelled() }}
+        run: npm run prettier:check

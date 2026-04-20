@@ -96,7 +96,7 @@ Add a `<VPSwiper>` tag to your Markdown where you want the Swiper to appear.
 />
 ```
 
-```vue [Dynamic URL's ~vscode-icons:file-type-text~]
+```vue [Dynamic URLs ~vscode-icons:file-type-text~]
 <VPSwiper base-url="https://example.com/path" :number-of-slides="3" />
 ```
 
