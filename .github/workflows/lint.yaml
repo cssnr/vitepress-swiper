@@ -30,6 +30,10 @@ jobs:
         id: install
         run: npm ci
 
+      - name: "Debug dist"
+        continue-on-error: true
+        run: ls -lahR dist
+
       #- name: "eslint"
       #  if: ${{ !cancelled() }}
       #  run: |
