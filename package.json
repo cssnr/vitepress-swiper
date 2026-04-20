@@ -33,12 +33,14 @@
   "exports": {
     ".": {
       "import": "./dist/VPSwiper.es.js",
-      "require": "./dist/VPSwiper.umd.js"
+      "require": "./dist/VPSwiper.umd.js",
+      "types": "./dist/VPSwiper.vue.d.ts"
     },
     "./style.css": "./dist/VPSwiper.css"
   },
   "main": "dist/VPSwiper.umd.js",
   "module": "dist/VPSwiper.es.js",
+  "types": "dist/VPSwiper.vue.d.ts",
   "files": [
     "dist"
   ],
