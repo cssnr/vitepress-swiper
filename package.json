@@ -58,7 +58,6 @@
   "devDependencies": {
     "@cssnr/vitepress-plugin-contributors": "^0.2.0",
     "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
-    "@types/react": "^18.3.28",
     "@vitejs/plugin-vue": "^6.0.6",
     "prettier": "^3.8.3",
     "vite": "^8.0.8",

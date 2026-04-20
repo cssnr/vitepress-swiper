@@ -2,9 +2,9 @@
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
-    "rootDir": "src",
     "outDir": "dist",
-    "types": ["react"]
+    "rootDir": "src",
+    "skipLibCheck": true
   },
   "include": ["src/**/*"]
 }
