@@ -22,16 +22,20 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v6
 
-      - name: "Debug Event"
+      - name: "Debug event.json"
+        if: ${{ !github.event.act }}
         continue-on-error: true
-        run: |
-          echo "ref: ${{ github.ref }}"
-          echo "event_name: ${{ github.event_name }}"
-          echo "github.event.repository.name: ${{ github.event.repository.name }}"
-
-          echo "::group::cat event.json"
-          cat "${GITHUB_EVENT_PATH}"
-          echo "::endgroup::"
+        run: cat "${GITHUB_EVENT_PATH}"
+      - name: "Debug CTX github"
+        if: ${{ !github.event.act }}
+        continue-on-error: true
+        env:
+          GITHUB_CTX: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CTX"
+      - name: "Debug Environment"
+        if: ${{ !github.event.act }}
+        continue-on-error: true
+        run: env
 
       - name: "Update Package Version"
         uses: cssnr/update-json-value-action@v2
@@ -40,8 +44,7 @@ jobs:
 
       - name: "Debug Package File"
         continue-on-error: true
-        run: |
-          cat package.json
+        run: cat package.json
 
       - name: "Setup Node"
         uses: actions/setup-node@v6
@@ -50,15 +53,11 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: "Install"
-        run: |
-          npm ci
+        run: npm ci
 
       - name: "Publish"
         if: ${{ !github.event.release.prerelease }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          npm publish --provenance --access public
+        run: npm publish --provenance --access public
 
       - name: "Upload to Actions"
         uses: actions/upload-artifact@v7
@@ -69,8 +68,7 @@ jobs:
 
       - name: "Archive Distribution"
         continue-on-error: true
-        run: |
-          zip -r dist.zip dist package.json README.md LICENSE
+        run: zip -r dist.zip dist package.json README.md LICENSE
 
       - name: "Upload Release"
         if: ${{ github.event_name == 'release' }}
