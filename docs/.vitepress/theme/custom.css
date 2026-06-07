@@ -8,11 +8,14 @@
   --vp-sidebar-width: 234px; /* Custom Sidebar Width */
 }
 
-/* NOTE: This is a "fix" for the search modal content shift */
 @supports (scrollbar-gutter: stable) {
-  @media (min-width: 768px) {
+  /* Note: local search is: 768px */
+  @media (min-width: 769px) {
     html {
       scrollbar-gutter: stable;
+    }
+    html:has(:fullscreen) {
+      scrollbar-gutter: auto;
     }
   }
 }
