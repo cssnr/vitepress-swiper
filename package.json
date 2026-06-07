@@ -52,21 +52,27 @@
     "docs:dev": "vitepress dev docs",
     "docs:preview": "vitepress preview docs",
     "get-contributors": "npx get-contributors cssnr/vitepress-swiper -f docs/.vitepress/contributors.json",
+    "lint": "eslint src",
     "prepare": "npm run build",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write .",
     "yamllint": "yamllint -c .github/yamllint.yaml ."
   },
   "devDependencies": {
+    "@cssnr/vitepress-chat": "github:smashedr/vitepress-chat#0.2.0",
     "@cssnr/vitepress-plugin-contributors": "^0.2.0",
-    "@cssnr/vitepress-plugin-copybutton": "^0.0.2",
-    "@vitejs/plugin-vue": "^6.0.6",
+    "@cssnr/vitepress-plugin-copybutton": "^0.0.3",
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "eslint": "^10.4.1",
+    "eslint-plugin-vue": "^10.9.2",
     "prettier": "^3.8.3",
-    "vite": "^8.0.8",
+    "typescript-eslint": "^8.60.1",
+    "vite": "^8.0.16",
     "vitepress": "^1.6.4",
     "vitepress-plugin-group-icons": "^1.7.5",
-    "vue": "^3.5.32",
-    "vue-tsc": "^3.2.7"
+    "vue": "^3.5.35",
+    "vue-tsc": "^3.3.3"
   },
   "peerDependencies": {
     "swiper": ">=11.0.0",

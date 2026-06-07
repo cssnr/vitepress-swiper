@@ -53,7 +53,7 @@ These [docs](docs) are **written in plain text** using Markdown and built with [
 | [docs/public](docs/public)                                           | Static Files Root         |
 | [docs/.vitepress](docs/.vitepress)                                   | VitePress Root            |
 | [docs/.vitepress/config.mts](docs/.vitepress/config.mts)             | VitePress Config File     |
-| [docs/.vitepress/theme/index.js](docs/.vitepress/theme/index.js)     | VitePress Theme File      |
+| [docs/.vitepress/theme/index.ts](docs/.vitepress/theme/index.ts)     | VitePress Theme File      |
 | [docs/.vitepress/theme/custom.css](docs/.vitepress/theme/custom.css) | VitePress Global CSS File |
 | [docs/.vitepress/theme/components](docs/.vitepress/theme/components) | VitePress Components Root |
 

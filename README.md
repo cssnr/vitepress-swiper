@@ -3,7 +3,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/%40cssnr%2Fvitepress-swiper?logo=npm)](https://npm-stat.com/charts.html?package=%40cssnr%2Fvitepress-swiper)
 [![Bundlephobia Size](https://img.shields.io/bundlephobia/min/%40cssnr%2Fvitepress-swiper?logo=bookstack&logoColor=white)](https://bundlephobia.com/package/@cssnr/vitepress-swiper)
 [![Deployment NPM](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/npm?logo=github&label=npm)](https://github.com/cssnr/vitepress-swiper/deployments/npm)
-[![Deployment Docs](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/docs?logo=materialformkdocs&logoColor=white&label=docs)](https://github.com/cssnr/vitepress-swiper/deployments/docs)
+[![Deployment Docs](https://img.shields.io/github/deployments/cssnr/vitepress-swiper/docs?logo=vitepress&logoColor=white&label=docs)](https://github.com/cssnr/vitepress-swiper/deployments/docs)
 [![Workflow Release](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/release.yaml?logo=norton&logoColor=white&label=release)](https://github.com/cssnr/vitepress-swiper/actions/workflows/release.yaml)
 [![Workflow Lint](https://img.shields.io/github/actions/workflow/status/cssnr/vitepress-swiper/lint.yaml?logo=norton&logoColor=white&label=lint)](https://github.com/cssnr/vitepress-swiper/actions/workflows/lint.yaml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/vitepress-swiper?logo=listenhub&label=updated)](https://github.com/cssnr/vitepress-swiper/pulse)
@@ -38,9 +38,7 @@ Minimal footprint with only 3 lines of setup code and 1 Markdown tag per gallery
 
 **Live Demo's and Examples** are [available on the website](https://vitepress-swiper.cssnr.com/examples).
 
-> [!IMPORTANT]  
-> For **Up-to-Date** Documentation, please visit the website:  
-> https://vitepress-swiper.cssnr.com/
+[![View Documentation](https://img.shields.io/badge/view_documentation-blue?style=for-the-badge&logo=googledocs&logoColor=white)](https://vitepress-swiper.cssnr.com/)
 
 ## Install
 
@@ -59,7 +57,7 @@ Install directly into your VitePress with:
 npm i @cssnr/vitepress-swiper
 ```
 
-Then import it in your `.vitepress/theme/index.js`:
+Then import it in your `.vitepress/theme/index.ts`:
 
 ```javascript
 import DefaultTheme from 'vitepress/theme'
@@ -92,7 +90,7 @@ Add to your project:
 npm i swiper
 ```
 
-Then import it in your `.vitepress/theme/index.js`:
+Then import it in your `.vitepress/theme/index.ts`:
 
 ```javascript
 import DefaultTheme from 'vitepress/theme'
@@ -114,7 +112,7 @@ To use, add a `<VPSwiper>` tag to your markdown where you want the gallery to ap
 You can provide a [list](#slides-list) of `:slides` or generate
 a [dynamic](#dynamic-url-generation) `:number-of-slides` using a `base-url`.
 
-> View the [Usage Guide](https://vitepress-swiper.cssnr.com/guides/get-started#usage).
+[![View Documentation](https://img.shields.io/badge/view_documentation-blue?style=for-the-badge&logo=googledocs&logoColor=white)](https://vitepress-swiper.cssnr.com/guides/get-started#usage)
 
 ### Slides List
 
@@ -206,7 +204,7 @@ There are [Plugin Options](#plugin-options) and [Swiper Options](#swiper-options
 
 _Note: String parameters do **not** begin with a `:` but all other types do._
 
-> View the [Options Guide](https://vitepress-swiper.cssnr.com/docs/options).
+[![View Documentation](https://img.shields.io/badge/view_documentation-blue?style=for-the-badge&logo=googledocs&logoColor=white)](https://vitepress-swiper.cssnr.com/docs/options)
 
 ### Plugin Options
 

@@ -1,6 +1,7 @@
+import path from 'path'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import path from 'path'
+import instructions from '@cssnr/vitepress-chat/instructions'
 
 const settings = {
   siteTitle: 'VitePress Swiper', // For Site Sidebar
@@ -32,6 +33,10 @@ export default defineConfig({
       allowedHosts: true,
     },
     plugins: [
+      instructions({
+        filePath: 'llms.txt',
+        exclude: ['index.md', 'resources.md', 'examples/**/*'],
+      }),
       groupIconVitePlugin({
         customIcon: {
           git: 'vscode-icons:file-type-git',
@@ -51,7 +56,15 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     // ['link', { rel: 'icon', type: 'image/svg', sizes: 'any', href: '/images/logo.svg' }],
-    ['link', { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: '/images/logo.png' }],
+    [
+      'link',
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        sizes: '180x180',
+        href: '/images/logo.png',
+      },
+    ],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: settings.image32 }],
     // ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/logo16.png' }],
 

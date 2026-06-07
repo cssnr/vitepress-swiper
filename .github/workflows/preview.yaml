@@ -8,6 +8,7 @@ on:
       - ".github/workflows/preview.yaml"
       - ".vitepress/**"
       - "docs/**"
+      - "src/**"
       - "package*.json"
 
 concurrency:
@@ -24,8 +25,7 @@ jobs:
     with:
       build: "npm run docs:deploy"
       path: "docs/.vitepress/dist"
-    secrets:
-      webhook: ${{ secrets.DISCORD_WEBHOOK }}
+    secrets: inherit
 
   deploy:
     name: "Deploy"
@@ -53,7 +53,7 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v6
 
-      - name: "Setup Node 24"
+      - name: "Setup Node"
         uses: actions/setup-node@v6
         with:
           node-version: 24

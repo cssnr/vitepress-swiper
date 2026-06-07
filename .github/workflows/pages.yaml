@@ -3,11 +3,12 @@ name: "Pages"
 on:
   workflow_dispatch:
   push:
-    branches: [master]
+    branches: [master, main]
     paths:
       - ".github/workflows/pages.yaml"
       - ".vitepress/**"
       - "docs/**"
+      - "src/**"
       - "package*.json"
 
 env:
@@ -21,7 +22,7 @@ concurrency:
 jobs:
   build:
     name: "Build"
-    if: ${{ !contains(github.event.head_commit.message, '#nodeploy') || github.actor != 'dependabot[bot]' }}
+    if: ${{ !contains(github.event.head_commit.message, '#nodeploy') }}
     uses: cssnr/workflows/.github/workflows/npm-build.yaml@master
     permissions:
       contents: read
@@ -29,6 +30,7 @@ jobs:
       build: "npm run docs:deploy"
       path: "docs/.vitepress/dist"
       pages: true
+    secrets: inherit
 
   deploy:
     name: "Deploy"
@@ -52,13 +54,13 @@ jobs:
       - name: "Send Deploy Notification"
         if: ${{ !cancelled() }}
         continue-on-error: true
-        uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
+        uses: sarisia/actions-status-discord@eb045afee445dc055c18d3d90bd0f244fd062708 # v1.16.0
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           description: ${{ steps.deployment.outputs.page_url }}
 
   post:
-    name: "Post-Deploy"
+    name: "Post"
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: deploy
@@ -81,7 +83,7 @@ jobs:
 
       - name: "Send Discord Notification"
         if: ${{ failure() }}
-        uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
+        uses: sarisia/actions-status-discord@eb045afee445dc055c18d3d90bd0f244fd062708 # v1.16.0
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           description: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
