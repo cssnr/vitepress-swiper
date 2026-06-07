@@ -45,9 +45,9 @@ _Note: you can also [copy the source](source.md) file to your project._
 
 Add these 3 lines to your `index.[js,ts]`.
 
-_If you don't have a [.vitepress/theme/index.js](https://vitepress.dev/guide/custom-theme#theme-resolving) file, create one._
+_If you don't have a [.vitepress/theme/index.ts](https://vitepress.dev/guide/custom-theme#theme-resolving) file, create one._
 
-```javascript [.vitepress/theme/index.js]
+```javascript [.vitepress/theme/index.ts]
 import DefaultTheme, { VPBadge } from 'vitepress/theme' // [!code highlight]
 
 import VPSwiper from '@cssnr/vitepress-swiper' // [!code ++]

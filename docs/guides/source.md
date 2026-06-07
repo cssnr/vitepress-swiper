@@ -45,7 +45,7 @@ bun i swiper
 
 Add these 2 lines to your `index.[js,ts]`.
 
-```javascript [.vitepress/theme/index.js]
+```javascript [.vitepress/theme/index.ts]
 import DefaultTheme, { VPBadge } from 'vitepress/theme' // [!code highlight]
 
 import VPSwiper from './components/VPSwiper.vue' // [!code ++]

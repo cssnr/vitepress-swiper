@@ -1,4 +1,8 @@
-.github/disabled
-.github/pull_request_template.md
+# Tools
+dist/
 package-lock.json
-*.html
+
+# Files
+.github/disabled/
+.github/PULL_REQUEST_TEMPLATE/
+.github/pull_request_template.md

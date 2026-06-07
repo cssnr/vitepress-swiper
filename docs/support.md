@@ -39,7 +39,9 @@ You can chat with us about anything [on discord](https://discord.gg/wXy6m2X8wY).
 
 [![Chat on Discord](https://img.shields.io/badge/Chat_on_Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/wXy6m2X8wY)
 
-[https://cssnr.github.io/feedback/](https://cssnr.github.io/feedback/?app=VitePress%20Swiper)
+&nbsp;
+
+[![Support on Ko-fi](https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01c01ea9191809398c_support_me_on_kofi_blue.png){ width="360" }](https://ko-fi.com/cssnr)
 
 <a href="https://github.com/cssnr/vitepress-swiper">
  <picture>
