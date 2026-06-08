@@ -14,8 +14,8 @@ import contributors from '../contributors.json'
 import CopyButton from '@cssnr/vitepress-plugin-copybutton'
 import '@cssnr/vitepress-plugin-copybutton/style.css'
 
-import chat from '@cssnr/vitepress-chat'
-import '@cssnr/vitepress-chat/style.css'
+import chat from 'vitepress-chat'
+import 'vitepress-chat/style.css'
 
 // https://vitepress.dev/guide/extending-default-theme
 // noinspection JSUnusedGlobalSymbols
@@ -24,11 +24,11 @@ export default {
   ...DefaultTheme,
 
   ...chat(DefaultTheme, {
+    filePath: 'llms.txt',
     api: import.meta.env.VITE_AI_API,
     headers: import.meta.env.VITE_AI_AUTH
       ? { Authorization: import.meta.env.VITE_AI_AUTH }
       : undefined,
-    filePath: 'llms.txt',
   }),
 
   enhanceApp({ app }) {
