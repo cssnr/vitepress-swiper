@@ -1,7 +1,7 @@
 import path from 'path'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-import instructions from '@cssnr/vitepress-chat/instructions'
+import instructions from 'vitepress-chat/instructions'
 
 const settings = {
   siteTitle: 'VitePress Swiper', // For Site Sidebar
