@@ -25,7 +25,7 @@
     "type": "ko-fi",
     "url": "https://ko-fi.com/cssnr"
   },
-  "license": "GPL-3.0-only",
+  "license": "MIT",
   "author": {
     "name": "Shane",
     "url": "https://cssnr.github.io/"
