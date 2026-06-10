@@ -27,6 +27,7 @@ jobs:
     permissions:
       contents: read
     with:
+      install: "npm ci --ignore-scripts"
       build: "npm run docs:deploy"
       path: "docs/.vitepress/dist"
       pages: true
@@ -49,7 +50,7 @@ jobs:
     steps:
       - name: "Deploy Pages"
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: "Send Deploy Notification"
         if: ${{ !cancelled() }}

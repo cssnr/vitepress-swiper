@@ -41,3 +41,6 @@ jobs:
             Provide initial triage and troubleshooting steps, then gather any additional information needed to proceed.
             Respond using your general knowledge of VitePress Plugins and the following knowledge files:
           url: https://vitepress-swiper.cssnr.com/llms.txt
+          path: |
+            package.json
+            AGENTS.md

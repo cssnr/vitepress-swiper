@@ -24,6 +24,7 @@ export default defineConfig({
   // srcDir: './docs',
   // base: '/path/',
   vite: {
+    envDir: '..',
     resolve: {
       alias: {
         '@src': path.resolve(__dirname, '../../src'),

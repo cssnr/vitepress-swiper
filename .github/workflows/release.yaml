@@ -13,6 +13,7 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      packages: write
 
     environment:
       name: npm
@@ -23,17 +24,14 @@ jobs:
         uses: actions/checkout@v6
 
       - name: "Debug event.json"
-        if: ${{ !github.event.act }}
         continue-on-error: true
         run: cat "${GITHUB_EVENT_PATH}"
       - name: "Debug CTX github"
-        if: ${{ !github.event.act }}
         continue-on-error: true
         env:
           GITHUB_CTX: ${{ toJSON(github) }}
         run: echo "$GITHUB_CTX"
       - name: "Debug Environment"
-        if: ${{ !github.event.act }}
         continue-on-error: true
         run: env
 
@@ -42,7 +40,7 @@ jobs:
         with:
           file: "package.json"
 
-      - name: "Debug Package File"
+      - name: "Debug package.json"
         continue-on-error: true
         run: cat package.json
 
@@ -52,34 +50,35 @@ jobs:
           node-version: 24
           registry-url: "https://registry.npmjs.org"
 
-      - name: "Install"
-        run: npm ci
+      - name: "Install and Pack"
+        run: |
+          npm ci
+          npm pack --ignore-scripts
 
-      - name: "Publish"
-        if: ${{ !github.event.release.prerelease }}
-        run: npm publish --provenance --access public
-
-      - name: "Upload to Actions"
-        uses: actions/upload-artifact@v7
-        continue-on-error: true
-        with:
-          name: dist
-          path: dist
-
-      - name: "Archive Distribution"
-        continue-on-error: true
-        run: zip -r dist.zip dist package.json README.md LICENSE
+      - name: "Debug Package"
+        run: |
+          echo "::group::ls ."
+          ls -lAh .
+          echo "::endgroup::"
+          echo "::group::ls dist"
+          ls -lAh dist
+          echo "::endgroup::"
 
       - name: "Upload Release"
-        if: ${{ github.event_name == 'release' }}
         uses: cssnr/upload-release-action@v1
-        continue-on-error: true
         with:
-          files: dist.zip
+          globs: "*.tgz"
+
+      - name: "Publish NPM"
+        if: ${{ !github.event.release.prerelease }}
+        #env:
+        #  # for initial publishing, remove after adding trusted publishing
+        #  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --ignore-scripts --provenance --access public
 
       - name: "Update Release Notes Action"
-        uses: smashedr/update-release-notes-action@master
         continue-on-error: true
+        uses: smashedr/update-release-notes-action@master
         with:
           location: tail
 
@@ -89,7 +88,7 @@ jobs:
 
       - name: "Send Failure Notification"
         if: ${{ failure() }}
-        uses: sarisia/actions-status-discord@b8381b25576cb341b2af39926ab42c5056cc44ed # v1.15.5
+        uses: sarisia/actions-status-discord@eb045afee445dc055c18d3d90bd0f244fd062708 # v1.16.0
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           description: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

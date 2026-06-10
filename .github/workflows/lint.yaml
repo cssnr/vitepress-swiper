@@ -32,7 +32,8 @@ jobs:
 
       - name: "Install"
         id: install
-        run: npm ci
+        run: |
+          npm ci
 
       - name: "Debug"
         continue-on-error: true
