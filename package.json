@@ -54,6 +54,7 @@
     "get-contributors": "npx get-contributors cssnr/vitepress-swiper -f docs/.vitepress/contributors.json",
     "lint": "eslint src",
     "prepare": "npm run build",
+    "prettier": "npm run prettier:write",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write .",
     "yamllint": "yamllint -c .github/yamllint.yaml ."
