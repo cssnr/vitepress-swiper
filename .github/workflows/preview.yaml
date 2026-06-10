@@ -3,7 +3,7 @@ name: "Preview"
 on:
   workflow_dispatch:
   push:
-    branches-ignore: [master]
+    branches-ignore: [master, main]
     paths:
       - ".github/workflows/preview.yaml"
       - ".vitepress/**"
@@ -23,6 +23,7 @@ jobs:
     permissions:
       contents: read
     with:
+      install: "npm ci --ignore-scripts"
       build: "npm run docs:deploy"
       path: "docs/.vitepress/dist"
     secrets: inherit
@@ -60,7 +61,7 @@ jobs:
 
       - name: "Install"
         id: install
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: "prettier"
         if: ${{ !cancelled() }}
